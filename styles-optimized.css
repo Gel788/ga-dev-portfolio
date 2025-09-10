@@ -1841,23 +1841,6 @@ body {
     padding: var(--space-lg);
   }
   
-  .checkbox-service-label {
-    padding: var(--space-md);
-  }
-  
-  .checkbox-service-custom {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .checkbox-service-title {
-    font-size: var(--font-size-sm);
-  }
-  
-  .checkbox-service-desc {
-    font-size: var(--font-size-xs);
-  }
-  
   .about-hero-title {
     font-size: var(--font-size-3xl);
   }
@@ -2329,90 +2312,6 @@ body {
   grid-column: 1 / -1;
 }
 
-.checkbox-group-services {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-
-.checkbox-service-label {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-md);
-  cursor: pointer;
-  padding: var(--space-lg);
-  background: var(--bg-primary);
-  border: 2px solid var(--border-primary);
-  border-radius: var(--radius-lg);
-  transition: all 0.3s ease;
-}
-
-.checkbox-service-label:hover {
-  border-color: var(--border-accent);
-  background: var(--bg-secondary);
-}
-
-.checkbox-service-label input[type="checkbox"] {
-  display: none;
-}
-
-.checkbox-service-custom {
-  width: 24px;
-  height: 24px;
-  border: 2px solid var(--border-primary);
-  border-radius: var(--radius-sm);
-  background: var(--bg-primary);
-  position: relative;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
-  margin-top: 2px;
-}
-
-.checkbox-service-label input[type="checkbox"]:checked + .checkbox-service-custom {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
-}
-
-.checkbox-service-label input[type="checkbox"]:checked + .checkbox-service-custom::after {
-  content: '✓';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--text-primary);
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.checkbox-service-label input[type="checkbox"]:checked ~ .checkbox-service-content {
-  color: var(--text-primary);
-}
-
-.checkbox-service-label:has(input[type="checkbox"]:checked) {
-  border-color: var(--accent-primary);
-  background: rgba(255, 107, 53, 0.05);
-}
-
-.checkbox-service-content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-  flex: 1;
-}
-
-.checkbox-service-title {
-  font-size: var(--font-size-md);
-  font-weight: 600;
-  color: var(--text-primary);
-  transition: color 0.3s ease;
-}
-
-.checkbox-service-desc {
-  font-size: var(--font-size-sm);
-  color: var(--text-secondary);
-  line-height: 1.5;
-  transition: color 0.3s ease;
-}
 
 .checkbox-label {
   display: flex;

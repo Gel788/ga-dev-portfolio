@@ -387,22 +387,21 @@ function initContactForm() {
     return isValid;
   }
   
-  // Handle audit services checkboxes
-  const auditCheckboxes = form.querySelectorAll('input[name="services"]');
+  // Handle audit project types
+  const projectTypeSelect = document.getElementById('projectType');
   const auditDetailsGroup = document.getElementById('auditDetailsGroup');
   
   function toggleAuditDetails() {
-    const hasAuditSelected = Array.from(auditCheckboxes).some(checkbox => checkbox.checked);
-    auditDetailsGroup.style.display = hasAuditSelected ? 'block' : 'none';
+    const selectedValue = projectTypeSelect.value;
+    const isAuditProject = selectedValue.includes('audit');
+    auditDetailsGroup.style.display = isAuditProject ? 'block' : 'none';
     
-    if (hasAuditSelected) {
+    if (isAuditProject) {
       auditDetailsGroup.style.animation = 'fadeInUp 0.3s ease';
     }
   }
   
-  auditCheckboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', toggleAuditDetails);
-  });
+  projectTypeSelect.addEventListener('change', toggleAuditDetails);
 
   // Real-time validation
   const inputs = form.querySelectorAll('input, select, textarea');

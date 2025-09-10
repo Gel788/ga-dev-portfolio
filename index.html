@@ -1101,6 +1101,10 @@
                 <option value="ecommerce">Интернет-магазин</option>
                 <option value="saas">SaaS платформа</option>
                 <option value="crm">CRM система</option>
+                <option value="it-audit">Аудит IT отдела</option>
+                <option value="project-audit">Аудит проекта</option>
+                <option value="security-audit">Аудит безопасности</option>
+                <option value="performance-audit">Аудит производительности</option>
                 <option value="other">Другое</option>
               </select>
               <div class="form-error" id="projectTypeError"></div>
@@ -1134,47 +1138,6 @@
               <label for="message" class="form-label">Расскажите о проекте *</label>
               <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Опишите вашу идею, цели проекта и любые особые требования..." required></textarea>
               <div class="form-error" id="messageError"></div>
-            </div>
-            
-            <div class="form-group">
-              <label class="form-label">Дополнительные услуги</label>
-              <div class="checkbox-group-services">
-                <label class="checkbox-service-label">
-                  <input type="checkbox" id="itAudit" name="services" value="it-audit">
-                  <span class="checkbox-service-custom"></span>
-                  <div class="checkbox-service-content">
-                    <span class="checkbox-service-title">Аудит IT отдела</span>
-                    <span class="checkbox-service-desc">Анализ текущей IT инфраструктуры, процессов и рекомендации по оптимизации</span>
-                  </div>
-                </label>
-                
-                <label class="checkbox-service-label">
-                  <input type="checkbox" id="projectAudit" name="services" value="project-audit">
-                  <span class="checkbox-service-custom"></span>
-                  <div class="checkbox-service-content">
-                    <span class="checkbox-service-title">Аудит проекта</span>
-                    <span class="checkbox-service-desc">Технический аудит существующего проекта, анализ архитектуры и производительности</span>
-                  </div>
-                </label>
-                
-                <label class="checkbox-service-label">
-                  <input type="checkbox" id="securityAudit" name="services" value="security-audit">
-                  <span class="checkbox-service-custom"></span>
-                  <div class="checkbox-service-content">
-                    <span class="checkbox-service-title">Аудит безопасности</span>
-                    <span class="checkbox-service-desc">Проверка безопасности системы, выявление уязвимостей и рекомендации</span>
-                  </div>
-                </label>
-                
-                <label class="checkbox-service-label">
-                  <input type="checkbox" id="performanceAudit" name="services" value="performance-audit">
-                  <span class="checkbox-service-custom"></span>
-                  <div class="checkbox-service-content">
-                    <span class="checkbox-service-title">Аудит производительности</span>
-                    <span class="checkbox-service-desc">Анализ скорости работы, оптимизация кода и рекомендации по улучшению</span>
-                  </div>
-                </label>
-              </div>
             </div>
             
             <div class="form-group" id="auditDetailsGroup" style="display: none;">
