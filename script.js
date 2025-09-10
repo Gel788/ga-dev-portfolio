@@ -7,17 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const navbarToggle = document.getElementById('navbar-toggle');
   const navbarMenu = document.getElementById('navbar-menu');
   
-  console.log('Navbar Toggle:', navbarToggle);
-  console.log('Navbar Menu:', navbarMenu);
-  
   if (navbarToggle && navbarMenu) {
-    console.log('Elements found, adding event listener');
     navbarToggle.addEventListener('click', function() {
-      console.log('Toggle clicked!');
       navbarToggle.classList.toggle('active');
       navbarMenu.classList.toggle('active');
-      console.log('Toggle active:', navbarToggle.classList.contains('active'));
-      console.log('Menu active:', navbarMenu.classList.contains('active'));
     });
     
     // Close mobile menu when clicking on a link
@@ -101,10 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Active navigation link highlighting
-  const navLinks = document.querySelectorAll('.nav-item[href^="#"]');
-  const sections = document.querySelectorAll('section[id]');
-  
+  // Active navigation link highlighting (using existing variables)
   function highlightActiveLink() {
     const scrollPos = window.scrollY + 100;
     
@@ -112,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const top = section.offsetTop;
       const bottom = top + section.offsetHeight;
       const id = section.getAttribute('id');
-      const navLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+      const navLink = document.querySelector(`.navbar-link[href="#${id}"]`);
       
       if (navLink) {
         if (scrollPos >= top && scrollPos < bottom) {

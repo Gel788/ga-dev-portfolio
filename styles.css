@@ -1257,8 +1257,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.01em;
 }
 
-p, span, a, li, .nav-links a, .footer-links a {
-}
+/* Text styles for navigation and footer links */
 
 /* Case Study Layout - Premium Design */
 .case-layout {
