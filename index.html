@@ -1077,9 +1077,9 @@
             </div>
             
             <div class="form-group">
-              <label for="email" class="form-label">Email *</label>
-              <input type="email" id="email" name="email" class="form-input" required>
-              <div class="form-error" id="emailError"></div>
+              <label for="telegram" class="form-label">Ник в Telegram *</label>
+              <input type="text" id="telegram" name="telegram" class="form-input" placeholder="@username" required>
+              <div class="form-error" id="telegramError"></div>
             </div>
             
             <div class="form-group">
@@ -1164,9 +1164,21 @@
           </form>
           
           <div class="form-success" id="formSuccess">
-            <div class="success-icon">✅</div>
-            <h3>Заявка отправлена!</h3>
-            <p>Спасибо за обращение! Мы свяжемся с вами в течение 2 часов.</p>
+            <div class="success-animation">
+              <div class="success-checkmark">
+                <div class="check-icon">
+                  <span class="icon-line line-tip"></span>
+                  <span class="icon-line line-long"></span>
+                  <div class="icon-circle"></div>
+                  <div class="icon-fix"></div>
+                </div>
+              </div>
+            </div>
+            <h3>Заявка успешно отправлена!</h3>
+            <p>Спасибо за обращение! Мы свяжемся с вами в Telegram в течение 2 часов.</p>
+            <div class="success-actions">
+              <button class="btn btn-secondary" onclick="resetForm()">Отправить еще одну</button>
+            </div>
           </div>
         </div>
       </div>

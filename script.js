@@ -351,12 +351,12 @@ function initContactForm() {
       errorMessage = 'Это поле обязательно для заполнения';
     }
     
-    // Email validation
-    if (fieldName === 'email' && value) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(value)) {
+    // Telegram validation
+    if (fieldName === 'telegram' && value) {
+      const telegramRegex = /^@?[a-zA-Z0-9_]{5,32}$/;
+      if (!telegramRegex.test(value)) {
         isValid = false;
-        errorMessage = 'Введите корректный email адрес';
+        errorMessage = 'Введите корректный ник в Telegram (например: @username)';
       }
     }
     
@@ -454,6 +454,38 @@ function initContactForm() {
       submitBtn.disabled = false;
     }
   });
+}
+
+// Reset form function
+function resetForm() {
+  const form = document.getElementById('contactForm');
+  const successMessage = document.getElementById('formSuccess');
+  
+  if (form && successMessage) {
+    form.style.display = 'block';
+    successMessage.classList.remove('show');
+    form.reset();
+    
+    // Clear all error states
+    const errorElements = form.querySelectorAll('.form-error');
+    errorElements.forEach(error => {
+      error.classList.remove('show');
+    });
+    
+    const inputs = form.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+      input.style.borderColor = '';
+    });
+    
+    // Hide audit details if not selected
+    const projectTypeSelect = document.getElementById('projectType');
+    const auditDetailsGroup = document.getElementById('auditDetailsGroup');
+    if (projectTypeSelect && auditDetailsGroup) {
+      const selectedValue = projectTypeSelect.value;
+      const isAuditProject = selectedValue.includes('audit');
+      auditDetailsGroup.style.display = isAuditProject ? 'block' : 'none';
+    }
+  }
 }
 
 // Initialize contact form when DOM is loaded
