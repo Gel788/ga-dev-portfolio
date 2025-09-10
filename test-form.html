@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест формы</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input, textarea, select { width: 100%; padding: 8px; margin-bottom: 10px; }
+        button { background: #007bff; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+        .error { color: red; margin-top: 10px; }
+        .success { color: green; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Тест отправки формы</h1>
+    
+    <form id="testForm">
+        <div class="form-group">
+            <label for="name">Имя *</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="telegram">Telegram *</label>
+            <input type="text" id="telegram" name="telegram" placeholder="@username" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="projectType">Тип проекта *</label>
+            <select id="projectType" name="projectType" required>
+                <option value="">Выберите тип проекта</option>
+                <option value="web">Веб-сайт</option>
+                <option value="mobile">Мобильное приложение</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Сообщение *</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        
+        <button type="submit">Отправить тест</button>
+    </form>
+    
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('testForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = {};
+            
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Отправка...';
+            
+            try {
+                const response = await fetch('submit-form.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    resultDiv.innerHTML = '<div class="success">✅ ' + result.message + '</div>';
+                } else {
+                    resultDiv.innerHTML = '<div class="error">❌ ' + result.message + '</div>';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = '<div class="error">❌ Ошибка: ' + error.message + '</div>';
+            }
+        });
+    </script>
+</body>
+</html>

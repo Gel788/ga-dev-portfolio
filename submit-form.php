@@ -1,8 +1,14 @@
 <?php
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST');
+header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
+
+// Handle preflight requests
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
 
 // Telegram Bot Configuration
 $BOT_TOKEN = '8018952789:AAEXaez1JqLbFmoVUWUknIjKxREJPdzamps';
@@ -87,10 +93,16 @@ if ($http_code === 200) {
         echo json_encode(['success' => true, 'message' => 'Заявка успешно отправлена!']);
     } else {
         error_log("Telegram API Error: " . $response);
-        echo json_encode(['success' => false, 'message' => 'Ошибка отправки в Telegram']);
+        echo json_encode([
+            'success' => false, 
+            'message' => 'Ошибка отправки в Telegram: ' . ($response_data['description'] ?? 'Неизвестная ошибка')
+        ]);
     }
 } else {
     error_log("HTTP Error: " . $http_code . " Response: " . $response);
-    echo json_encode(['success' => false, 'message' => 'Ошибка соединения с Telegram']);
+    echo json_encode([
+        'success' => false, 
+        'message' => 'Ошибка соединения с Telegram (HTTP ' . $http_code . ')'
+    ]);
 }
 ?>
