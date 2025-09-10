@@ -202,6 +202,12 @@ body::after {
     max-width: 1440px;
     padding: 0 var(--space-2xl);
   }
+  
+  .stack-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    margin: var(--space-3xl) auto 0;
+  }
 }
 
 /* Progress Indicator */
@@ -3441,8 +3447,8 @@ p, span, div, li, a {
 
 .stack-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--space-2xl);
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
   margin-top: var(--space-3xl);
   position: relative;
   z-index: 2;
@@ -3798,6 +3804,13 @@ p, span, div, li, a {
 }
 
 /* Responsive Stack & Services */
+@media (max-width: 1200px) {
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
 @media (max-width: 768px) {
   .stack-grid {
     grid-template-columns: 1fr;
