@@ -435,25 +435,87 @@ function initContactForm() {
     submitBtn.disabled = true;
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Собираем данные формы
+      const formData = new FormData(form);
+      const data = {};
       
-      // Show success message
-      form.style.display = 'none';
-      successMessage.classList.add('show');
+      // Преобразуем FormData в обычный объект
+      for (let [key, value] of formData.entries()) {
+        data[key] = value;
+      }
       
-      // Reset form
-      form.reset();
+      // Отправляем данные на сервер
+      const response = await fetch('submit-form.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        // Show success message
+        form.style.display = 'none';
+        successMessage.classList.add('show');
+        
+        // Reset form
+        form.reset();
+        
+        // Скрываем поле деталей аудита
+        const auditDetailsGroup = document.getElementById('auditDetailsGroup');
+        if (auditDetailsGroup) {
+          auditDetailsGroup.style.display = 'none';
+        }
+      } else {
+        throw new Error(result.message || 'Ошибка отправки формы');
+      }
       
     } catch (error) {
       console.error('Form submission error:', error);
-      alert('Произошла ошибка при отправке формы. Попробуйте еще раз.');
+      
+      // Показываем красивый алерт об ошибке
+      showErrorAlert(error.message || 'Произошла ошибка при отправке формы. Попробуйте еще раз.');
     } finally {
       // Hide loading state
       submitBtn.classList.remove('loading');
       submitBtn.disabled = false;
     }
   });
+}
+
+// Show error alert function
+function showErrorAlert(message) {
+  // Создаем красивый алерт об ошибке
+  const errorAlert = document.createElement('div');
+  errorAlert.className = 'error-alert';
+  errorAlert.innerHTML = `
+    <div class="error-alert-content">
+      <div class="error-icon">❌</div>
+      <h3>Ошибка отправки</h3>
+      <p>${message}</p>
+      <button class="btn btn-primary" onclick="closeErrorAlert()">Понятно</button>
+    </div>
+  `;
+  
+  document.body.appendChild(errorAlert);
+  
+  // Анимация появления
+  setTimeout(() => {
+    errorAlert.classList.add('show');
+  }, 100);
+}
+
+// Close error alert function
+function closeErrorAlert() {
+  const errorAlert = document.querySelector('.error-alert');
+  if (errorAlert) {
+    errorAlert.classList.remove('show');
+    setTimeout(() => {
+      errorAlert.remove();
+    }, 300);
+  }
 }
 
 // Reset form function

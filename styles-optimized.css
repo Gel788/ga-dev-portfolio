@@ -2648,6 +2648,69 @@ body {
 }
 
 /* ========================================
+   ERROR ALERT
+   ======================================== */
+.error-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.error-alert.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.error-alert-content {
+  background: var(--bg-glass);
+  border: 1px solid #ef4444;
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 20px 40px rgba(239, 68, 68, 0.2);
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.error-alert.show .error-alert-content {
+  transform: scale(1);
+}
+
+.error-icon {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-lg);
+  color: #ef4444;
+}
+
+.error-alert-content h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.error-alert-content p {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+}
+
+/* ========================================
    CURSOR GLOW EFFECTS
    ======================================== */
 .cursor-glow {
