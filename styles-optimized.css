@@ -117,19 +117,21 @@ body {
 }
 
 /* ========================================
-   CUSTOM CURSOR
+   CUSTOM CURSOR TRAIL
    ======================================== */
 .cursor-trail {
   position: fixed;
-  width: 20px;
-  height: 20px;
-  background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
+  width: 8px;
+  height: 8px;
+  background: var(--accent-primary);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: difference;
-  transition: all 0.15s ease;
-  box-shadow: var(--shadow-glow);
+  transition: all 0.1s ease;
+  box-shadow: 
+    0 0 20px var(--accent-primary),
+    0 0 40px var(--accent-primary),
+    0 0 60px var(--accent-primary);
 }
 
 .cursor-trail::before {
@@ -137,23 +139,50 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 2px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.1s ease;
+}
+
+.cursor-trail.hover {
+  transform: scale(2);
+  background: var(--accent-gold);
+  box-shadow: 
+    0 0 30px var(--accent-gold),
+    0 0 60px var(--accent-gold),
+    0 0 90px var(--accent-gold);
+}
+
+.cursor-trail.hover::before {
+  transform: translate(-50%, -50%) scale(2);
+  background: var(--text-primary);
+}
+
+/* Cursor trail particles */
+.cursor-particle {
+  position: fixed;
   width: 4px;
   height: 4px;
   background: var(--accent-primary);
   border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 0.15s ease;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.8;
+  animation: particleFade 1s ease-out forwards;
 }
 
-.cursor-trail.hover {
-  transform: scale(1.8);
-  background: radial-gradient(circle, var(--accent-gold) 0%, var(--accent-primary) 50%, transparent 70%);
-  box-shadow: var(--shadow-gold-glow);
-}
-
-.cursor-trail.hover::before {
-  transform: translate(-50%, -50%) scale(1.5);
-  background: var(--accent-gold);
+@keyframes particleFade {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
 }
 
 /* ========================================
@@ -1350,6 +1379,74 @@ body {
   .btn {
     padding: var(--space-sm) var(--space-lg);
     font-size: var(--font-size-sm);
+  }
+}
+
+/* ========================================
+   CURSOR GLOW EFFECTS
+   ======================================== */
+.cursor-glow {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.cursor-glow::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.cursor-glow:hover::before {
+  opacity: 1;
+}
+
+/* Enhanced hover effects for interactive elements */
+a:hover,
+button:hover,
+.project-card:hover,
+.stack-category:hover,
+.service-card:hover,
+.navbar-link:hover {
+  position: relative;
+}
+
+a:hover::after,
+button:hover::after,
+.project-card:hover::after,
+.stack-category:hover::after,
+.service-card:hover::after,
+.navbar-link:hover::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+  border-radius: inherit;
+  opacity: 0.6;
+  z-index: -1;
+  pointer-events: none;
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
   }
 }
 

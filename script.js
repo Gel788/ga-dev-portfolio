@@ -238,46 +238,91 @@ function preloadImages() {
 // Start preloading after page load
 window.addEventListener('load', preloadImages);
 
-// Custom cursor trail effect
+// Enhanced cursor trail effect with glowing particles
 function initCursorTrail() {
   const cursor = document.createElement('div');
   cursor.className = 'cursor-trail';
   document.body.appendChild(cursor);
-  
+
   let mouseX = 0;
   let mouseY = 0;
   let cursorX = 0;
   let cursorY = 0;
-  
+  let lastX = 0;
+  let lastY = 0;
+  let particles = [];
+
+  // Create particle
+  function createParticle(x, y) {
+    const particle = document.createElement('div');
+    particle.className = 'cursor-particle';
+    particle.style.left = x + 'px';
+    particle.style.top = y + 'px';
+    document.body.appendChild(particle);
+
+    // Remove particle after animation
+    setTimeout(() => {
+      if (particle.parentNode) {
+        particle.parentNode.removeChild(particle);
+      }
+    }, 1000);
+
+    particles.push(particle);
+  }
+
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
+
+    // Create particles along the trail
+    const distance = Math.sqrt((mouseX - lastX) ** 2 + (mouseY - lastY) ** 2);
+    if (distance > 10) {
+      createParticle(mouseX, mouseY);
+      lastX = mouseX;
+      lastY = mouseY;
+    }
   });
-  
+
   function animateCursor() {
-    cursorX += (mouseX - cursorX) * 0.1;
-    cursorY += (mouseY - cursorY) * 0.1;
-    
+    cursorX += (mouseX - cursorX) * 0.15;
+    cursorY += (mouseY - cursorY) * 0.15;
+
     cursor.style.left = cursorX + 'px';
     cursor.style.top = cursorY + 'px';
-    
+
     requestAnimationFrame(animateCursor);
   }
-  
+
   animateCursor();
-  
+
   // Add hover effects
-  const hoverElements = document.querySelectorAll('a, button, .project-card, .stack-category, .service-card');
-  
+  const hoverElements = document.querySelectorAll('a, button, .project-card, .stack-category, .service-card, .navbar-link');
+
   hoverElements.forEach(el => {
     el.addEventListener('mouseenter', () => {
       cursor.classList.add('hover');
+      // Create extra particles on hover
+      for (let i = 0; i < 3; i++) {
+        setTimeout(() => {
+          createParticle(mouseX + (Math.random() - 0.5) * 20, mouseY + (Math.random() - 0.5) * 20);
+        }, i * 50);
+      }
     });
-    
+
     el.addEventListener('mouseleave', () => {
       cursor.classList.remove('hover');
     });
   });
+
+  // Clean up particles periodically
+  setInterval(() => {
+    particles = particles.filter(particle => {
+      if (!particle.parentNode) {
+        return false;
+      }
+      return true;
+    });
+  }, 2000);
 }
 
 // Initialize cursor trail
