@@ -238,6 +238,51 @@ function preloadImages() {
 // Start preloading after page load
 window.addEventListener('load', preloadImages);
 
+// Custom cursor trail effect
+function initCursorTrail() {
+  const cursor = document.createElement('div');
+  cursor.className = 'cursor-trail';
+  document.body.appendChild(cursor);
+  
+  let mouseX = 0;
+  let mouseY = 0;
+  let cursorX = 0;
+  let cursorY = 0;
+  
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+  
+  function animateCursor() {
+    cursorX += (mouseX - cursorX) * 0.1;
+    cursorY += (mouseY - cursorY) * 0.1;
+    
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+    
+    requestAnimationFrame(animateCursor);
+  }
+  
+  animateCursor();
+  
+  // Add hover effects
+  const hoverElements = document.querySelectorAll('a, button, .project-card, .stack-category, .service-card');
+  
+  hoverElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.classList.add('hover');
+    });
+    
+    el.addEventListener('mouseleave', () => {
+      cursor.classList.remove('hover');
+    });
+  });
+}
+
+// Initialize cursor trail
+initCursorTrail();
+
 // Enhanced markdown parser for detailed case studies
 function parseMarkdown(markdown) {
   if (!markdown) return '';
