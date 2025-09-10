@@ -1506,6 +1506,15 @@ body {
     padding: var(--space-xs) var(--space-sm);
   }
   
+  .case-sidebar {
+    margin-top: var(--space-xl);
+  }
+  
+  .case-info-card,
+  .case-tech-card {
+    padding: var(--space-lg);
+  }
+  
   .btn {
     padding: var(--space-sm) var(--space-lg);
     font-size: var(--font-size-sm);
@@ -1703,4 +1712,89 @@ button:hover::after,
   font-size: var(--font-size-sm);
   font-weight: 500;
   border: 1px solid var(--border-primary);
+}
+
+/* Case study sidebar styles */
+.case-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.case-info-card,
+.case-tech-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  backdrop-filter: blur(15px);
+}
+
+.case-info-card h3,
+.case-tech-card h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.case-tech-card .tech-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.case-tech-card .tech-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-sm);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-primary);
+  transition: all 0.3s ease;
+}
+
+.case-tech-card .tech-item:hover {
+  border-color: var(--border-accent);
+  background: var(--bg-secondary);
+}
+
+.case-tech-card .tech-name {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+.case-tech-card .tech-desc {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
 }

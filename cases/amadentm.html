@@ -206,13 +206,25 @@
             </div>
           </div>
 
-          <div class="case-gallery-card">
-            <h3>Галерея</h3>
-            <div class="case-gallery">
-              <img src="AmadentM/patient-dashboard.jpg" alt="Панель пациентов" loading="lazy">
-              <img src="AmadentM/appointment-scheduler.jpg" alt="Планировщик записей" loading="lazy">
-              <img src="AmadentM/medical-records.jpg" alt="Медицинские карты" loading="lazy">
-              <img src="AmadentM/analytics-dashboard.jpg" alt="Аналитика" loading="lazy">
+          <div class="case-tech-card">
+            <h3>Технологии</h3>
+            <div class="tech-list">
+              <div class="tech-item">
+                <span class="tech-name">Frontend</span>
+                <span class="tech-desc">React, TypeScript</span>
+              </div>
+              <div class="tech-item">
+                <span class="tech-name">Backend</span>
+                <span class="tech-desc">Node.js, GraphQL</span>
+              </div>
+              <div class="tech-item">
+                <span class="tech-name">База данных</span>
+                <span class="tech-desc">PostgreSQL, Redis</span>
+              </div>
+              <div class="tech-item">
+                <span class="tech-name">Инфраструктура</span>
+                <span class="tech-desc">AWS, Docker</span>
+              </div>
             </div>
           </div>
         </div>
@@ -220,41 +232,6 @@
     </section>
   </div>
 
-  <!-- Lightbox -->
-  <div class="lightbox-backdrop" id="lightbox">
-    <div class="lightbox-container">
-      <img src="" alt="" id="lightbox-image">
-      <button class="lightbox-close" id="lightbox-close">&times;</button>
-    </div>
-  </div>
-
   <script src="../script.js"></script>
-  <script>
-    // Lightbox functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImage = document.getElementById('lightbox-image');
-      const lightboxClose = document.getElementById('lightbox-close');
-      const galleryImages = document.querySelectorAll('.case-gallery img');
-
-      galleryImages.forEach(img => {
-        img.addEventListener('click', function() {
-          lightboxImage.src = this.src;
-          lightboxImage.alt = this.alt;
-          lightbox.classList.add('active');
-        });
-      });
-
-      lightboxClose.addEventListener('click', function() {
-        lightbox.classList.remove('active');
-      });
-
-      lightbox.addEventListener('click', function(e) {
-        if (e.target === lightbox) {
-          lightbox.classList.remove('active');
-        }
-      });
-    });
-  </script>
 </body>
 </html>
