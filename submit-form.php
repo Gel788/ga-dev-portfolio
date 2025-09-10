@@ -6,7 +6,7 @@ header('Access-Control-Allow-Headers: Content-Type');
 
 // Telegram Bot Configuration
 $BOT_TOKEN = '8018952789:AAEXaez1JqLbFmoVUWUknIjKxREJPdzamps';
-$CHAT_ID = 'YOUR_CHAT_ID'; // Замените на ваш Telegram ID
+$CHAT_ID = '143323192'; // Ваш реальный Chat ID
 
 // Проверяем метод запроса
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
