@@ -3,37 +3,142 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Astech — кейс</title>
+  <title>Astech — кейс | GA-DEV</title>
+  <meta name="description" content="Интегрированная облачная платформа для автомобильной диагностики с ИИ-анализом и микросервисной архитектурой">
   <link rel="stylesheet" href="../styles.css">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-  <main class="container section case-layout">
-    <div class="case-body">
-      <a href="../index.html" class="case-back-btn">← На главную</a>
-      <h1 style="margin:0 0 12px">Astech</h1>
-      <p class="subtitle" style="margin:0 20px 20px 0">Интегрированная облачная платформа для автомобильной диагностики с ИИ-анализом и микросервисной архитектурой</p>
-      <div class="case-meta">
-        <span class="meta-badge">Microservices</span>
-        <span class="meta-badge">AI/ML</span>
-        <span class="meta-badge">AWS Cloud</span>
-        <span class="meta-badge">LPR</span>
+  <!-- Premium Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <span class="brand-text">GA-DEV</span>
+        <span class="brand-subtitle">Development</span>
       </div>
-      <article id="md" class="prose"></article>
+      
+      <div class="navbar-menu">
+        <a href="../index.html" class="navbar-link">
+          <span class="link-icon">🏠</span>
+          <span class="link-text">Главная</span>
+        </a>
+        <a href="../index.html#projects" class="navbar-link">
+          <span class="link-icon">💼</span>
+          <span class="link-text">Проекты</span>
+        </a>
+      </div>
     </div>
-    <aside class="case-aside">
-      <div class="case-hero"><img src="../cases/%20Astech/image_1.png" alt="Astech Platform"></div>
-      <div class="gallery">
-        <img src="../cases/%20Astech/image_2.png" alt="Astech Dashboard" data-lightbox>
-        <img src="../cases/%20Astech/image_3.png" alt="Astech Mobile App" data-lightbox>
+  </nav>
+
+  <!-- Case Study Container -->
+  <div class="case-container">
+    <!-- Hero Section -->
+    <section class="case-hero-section">
+      <div class="case-hero-content">
+        <div class="case-breadcrumb">
+          <a href="../index.html">Главная</a>
+          <span>→</span>
+          <a href="../index.html#projects">Проекты</a>
+          <span>→</span>
+          <span>Astech</span>
+        </div>
+        
+        <div class="case-hero-text">
+          <h1 class="case-title">Astech</h1>
+          <p class="case-subtitle">Автомобильная диагностика</p>
+          <p class="case-description">Интегрированная облачная платформа для автомобильной диагностики с ИИ-анализом и микросервисной архитектурой</p>
+          
+          <div class="case-tags">
+            <span class="case-tag">Microservices</span>
+            <span class="case-tag">AI/ML</span>
+            <span class="case-tag">AWS Cloud</span>
+            <span class="case-tag">LPR</span>
+          </div>
+        </div>
       </div>
-    </aside>
-  </main>
-  <div class="lightbox-backdrop" id="lb"><img alt="" id="lbimg"></div>
+      
+      <div class="case-hero-image">
+        <img src="../cases/%20Astech/image_1.png" alt="Astech Platform" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="case-content-section">
+      <div class="case-content-grid">
+        <div class="case-main-content">
+          <article class="case-article">
+            <div id="md" class="prose"></div>
+          </article>
+        </div>
+        
+        <aside class="case-sidebar">
+          <div class="case-info-card">
+            <h3>Информация о проекте</h3>
+            <div class="info-item">
+              <span class="info-label">Индустрия:</span>
+              <span class="info-value">Automotive</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Платформа:</span>
+              <span class="info-value">Cloud, Web, Mobile</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Технологии:</span>
+              <span class="info-value">AWS, Microservices, AI</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Роль:</span>
+              <span class="info-value">Lead Developer</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Результат:</span>
+              <span class="info-value">Автоматизация диагностики</span>
+            </div>
+          </div>
+          
+          <div class="case-gallery-card">
+            <h3>Галерея</h3>
+            <div class="case-gallery">
+              <img src="../cases/%20Astech/image_2.png" alt="Astech Dashboard" data-lightbox>
+              <img src="../cases/%20Astech/image_3.png" alt="Astech Mobile App" data-lightbox>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox-backdrop" id="lb">
+    <div class="lightbox-container">
+      <img alt="" id="lbimg">
+      <button class="lightbox-close" onclick="document.getElementById('lb').classList.remove('active')">×</button>
+    </div>
+  </div>
+
   <script>
-    fetch('../cases/%20Astech/описание.md').then(r => r.text()).then(t => { document.getElementById('md').innerHTML = marked.parse(t); });
-    document.addEventListener('click', (e)=>{ const img=e.target.closest('[data-lightbox]'); if(!img) return; const lb=document.getElementById('lb'); const lbimg=document.getElementById('lbimg'); lbimg.src=img.src; lb.classList.add('active'); });
-    document.getElementById('lb').addEventListener('click', ()=>{ document.getElementById('lb').classList.remove('active'); });
+    // Load markdown content
+    fetch('../cases/%20Astech/описание.md')
+      .then(r => r.text())
+      .then(t => { 
+        document.getElementById('md').innerHTML = marked.parse(t); 
+      });
+    
+    // Lightbox functionality
+    document.addEventListener('click', (e) => {
+      const img = e.target.closest('[data-lightbox]');
+      if (!img) return;
+      const lb = document.getElementById('lb');
+      const lbimg = document.getElementById('lbimg');
+      lbimg.src = img.src;
+      lb.classList.add('active');
+    });
+    
+    document.getElementById('lb').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) {
+        document.getElementById('lb').classList.remove('active');
+      }
+    });
   </script>
 </body>
 </html>

@@ -3,35 +3,141 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Госуслуги — ЭДО — кейс</title>
+  <title>Госуслуги ЭДО — кейс | GA-DEV</title>
+  <meta name="description" content="Разработка модуля электронного документооборота для Госуслуг: подписание, маршрутизация, статусы, уведомления">
   <link rel="stylesheet" href="../styles.css">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-  <main class="container section case-layout">
-    <div class="case-body">
-      <a href="../index.html" class="case-back-btn">← На главную</a>
-      <h1 style="margin:0 0 12px">Госуслуги — Электронный документооборот</h1>
-      <p class="subtitle" style="margin:0 20px 20px 0">Модуль ЭДО: подписание, маршрутизация, статусы, уведомления</p>
-      <div class="case-meta">
-        <span class="meta-badge">Web</span>
-        <span class="meta-badge">TypeScript</span>
-        <span class="meta-badge">Документооборот</span>
+  <!-- Premium Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <span class="brand-text">GA-DEV</span>
+        <span class="brand-subtitle">Development</span>
       </div>
-      <article id="md" class="prose"></article>
+      
+      <div class="navbar-menu">
+        <a href="../index.html" class="navbar-link">
+          <span class="link-icon">🏠</span>
+          <span class="link-text">Главная</span>
+        </a>
+        <a href="../index.html#projects" class="navbar-link">
+          <span class="link-icon">💼</span>
+          <span class="link-text">Проекты</span>
+        </a>
+      </div>
     </div>
-    <aside class="case-aside">
-      <div class="case-hero"><img src="../cases/Gosuslugi/220.jpg" alt="Госуслуги ЭДО"></div>
-      <div class="gallery">
-        <img src="../cases/Gosuslugi/220.jpg" alt="Экран ЭДО" data-lightbox>
+  </nav>
+
+  <!-- Case Study Container -->
+  <div class="case-container">
+    <!-- Hero Section -->
+    <section class="case-hero-section">
+      <div class="case-hero-content">
+        <div class="case-breadcrumb">
+          <a href="../index.html">Главная</a>
+          <span>→</span>
+          <a href="../index.html#projects">Проекты</a>
+          <span>→</span>
+          <span>Госуслуги ЭДО</span>
+        </div>
+        
+        <div class="case-hero-text">
+          <h1 class="case-title">Госуслуги</h1>
+          <p class="case-subtitle">Электронный документооборот</p>
+          <p class="case-description">Модуль ЭДО: подписание, маршрутизация, статусы, уведомления</p>
+          
+          <div class="case-tags">
+            <span class="case-tag">Web</span>
+            <span class="case-tag">TypeScript</span>
+            <span class="case-tag">Документооборот</span>
+            <span class="case-tag">Госсектор</span>
+          </div>
+        </div>
       </div>
-    </aside>
-  </main>
-  <div class="lightbox-backdrop" id="lb"><img alt="" id="lbimg"></div>
+      
+      <div class="case-hero-image">
+        <img src="../cases/Gosuslugi/220.jpg" alt="Госуслуги ЭДО" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="case-content-section">
+      <div class="case-content-grid">
+        <div class="case-main-content">
+          <article class="case-article">
+            <div id="md" class="prose"></div>
+          </article>
+        </div>
+        
+        <aside class="case-sidebar">
+          <div class="case-info-card">
+            <h3>Информация о проекте</h3>
+            <div class="info-item">
+              <span class="info-label">Клиент:</span>
+              <span class="info-value">Госуслуги</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Платформа:</span>
+              <span class="info-value">Web</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Технологии:</span>
+              <span class="info-value">TypeScript, React</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Роль:</span>
+              <span class="info-value">Frontend Developer</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Статус:</span>
+              <span class="info-value">В продакшене</span>
+            </div>
+          </div>
+          
+          <div class="case-gallery-card">
+            <h3>Галерея</h3>
+            <div class="case-gallery">
+              <img src="../cases/Gosuslugi/220.jpg" alt="Экран ЭДО" data-lightbox>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox-backdrop" id="lb">
+    <div class="lightbox-container">
+      <img alt="" id="lbimg">
+      <button class="lightbox-close" onclick="document.getElementById('lb').classList.remove('active')">×</button>
+    </div>
+  </div>
+
   <script>
-    fetch('EDO.md').then(r => r.text()).then(t => { document.getElementById('md').innerHTML = marked.parse(t); });
-    document.addEventListener('click', (e)=>{ const img=e.target.closest('[data-lightbox]'); if(!img) return; const lb=document.getElementById('lb'); const lbimg=document.getElementById('lbimg'); lbimg.src=img.src; lb.classList.add('active'); });
-    document.getElementById('lb').addEventListener('click', ()=>{ document.getElementById('lb').classList.remove('active'); });
+    // Load markdown content
+    fetch('EDO.md')
+      .then(r => r.text())
+      .then(t => { 
+        document.getElementById('md').innerHTML = marked.parse(t); 
+      });
+    
+    // Lightbox functionality
+    document.addEventListener('click', (e) => {
+      const img = e.target.closest('[data-lightbox]');
+      if (!img) return;
+      const lb = document.getElementById('lb');
+      const lbimg = document.getElementById('lbimg');
+      lbimg.src = img.src;
+      lb.classList.add('active');
+    });
+    
+    document.getElementById('lb').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) {
+        document.getElementById('lb').classList.remove('active');
+      }
+    });
   </script>
 </body>
 </html>

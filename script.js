@@ -3,8 +3,59 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   
+  // Mobile Navigation Toggle
+  const navbarToggle = document.getElementById('navbar-toggle');
+  const navbarMenu = document.getElementById('navbar-menu');
+  
+  if (navbarToggle && navbarMenu) {
+    navbarToggle.addEventListener('click', function() {
+      navbarToggle.classList.toggle('active');
+      navbarMenu.classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.navbar-link').forEach(link => {
+      link.addEventListener('click', function() {
+        navbarToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!navbarToggle.contains(event.target) && !navbarMenu.contains(event.target)) {
+        navbarToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      }
+    });
+  }
+  
+  // Active Navigation Link
+  const navLinks = document.querySelectorAll('.navbar-link');
+  const sections = document.querySelectorAll('section[id]');
+  
+  function updateActiveLink() {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      const sectionHeight = section.offsetHeight;
+      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  }
+  
+  window.addEventListener('scroll', updateActiveLink);
+  
   // Navigation scroll effect and progress indicator
-  const nav = document.querySelector('.modern-nav');
+  const nav = document.querySelector('.navbar');
   const progressBar = document.getElementById('scrollProgress');
   
   function handleScroll() {

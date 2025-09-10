@@ -24,19 +24,44 @@
   <!-- Progress Indicator -->
   <div class="scroll-progress" id="scrollProgress"></div>
   
-  <!-- New Modern Navigation -->
-  <header class="modern-nav">
-    <div class="nav-container">
-      <div class="nav-brand">
-        <span class="brand-text">GA‑DEV</span>
+  <!-- Premium Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <span class="brand-text">GA-DEV</span>
+        <span class="brand-subtitle">Development</span>
       </div>
-      <nav class="nav-menu">
-        <a href="#about" class="nav-item">О нас</a>
-        <a href="#projects" class="nav-item">Кейсы</a>
-        <a href="#contact" class="nav-item nav-cta">Связаться</a>
-      </nav>
+      
+      <div class="navbar-menu" id="navbar-menu">
+        <a href="#hero" class="navbar-link active">
+          <span class="link-icon">🏠</span>
+          <span class="link-text">Главная</span>
+        </a>
+        <a href="#projects" class="navbar-link">
+          <span class="link-icon">💼</span>
+          <span class="link-text">Проекты</span>
+        </a>
+        <a href="#about" class="navbar-link">
+          <span class="link-icon">👥</span>
+          <span class="link-text">О нас</span>
+        </a>
+        <a href="#stack" class="navbar-link">
+          <span class="link-icon">⚡</span>
+          <span class="link-text">Стек</span>
+        </a>
+        <a href="#services" class="navbar-link">
+          <span class="link-icon">🚀</span>
+          <span class="link-text">Услуги</span>
+        </a>
+      </div>
+      
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+      </button>
     </div>
-  </header>
+  </nav>
 
   <!-- Hero Section -->
   <section class="hero-section" id="hero">
@@ -311,6 +336,275 @@
             </div>
           </div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stack Section -->
+  <section class="stack-section" id="stack">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Технологический стек</h2>
+        <p class="section-subtitle">
+          Используем современные и проверенные технологии для создания надёжных решений
+        </p>
+      </div>
+      
+      <div class="stack-grid">
+        <div class="stack-category">
+          <div class="category-header">
+            <div class="category-icon">🌐</div>
+            <h3>Frontend</h3>
+          </div>
+          <div class="tech-list">
+            <div class="tech-item">
+              <span class="tech-name">React</span>
+              <div class="tech-level">
+                <div class="level-bar" style="width: 95%"></div>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Vue.js</span>
+              <div class="tech-level">
+                <div class="level-bar" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">TypeScript</span>
+              <div class="tech-level">
+                <div class="level-bar" style="width: 92%"></div>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Next.js</span>
+              <div class="tech-level">
+                <div class="level-bar" style="width: 88%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack-category">
+          <div class="category-header">
+            <div class="category-icon">⚙️</div>
+            <h3>Backend</h3>
+          </div>
+          <div class="tech-list">
+            <div class="tech-item">
+              <span class="tech-name">Node.js</span>
+              <div class="tech-level">
+                <div class="level-bar" style="width: 93%"></div>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Python</span>
+              <div class="tech-level">
+                <div class="level-bar" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">PostgreSQL</span>
+              <div class="tech-level">
+                <div class="level-bar" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">MongoDB</span>
+              <div class="tech-level">
+                <div class="level-bar" style="width: 87%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack-category">
+          <div class="category-header">
+            <div class="category-icon">📱</div>
+            <h3>Mobile</h3>
+          </div>
+          <div class="tech-list">
+            <div class="tech-item">
+              <span class="tech-name">React Native</span>
+              <div class="tech-level">
+                <div class="level-bar" style="width: 94%"></div>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Flutter</span>
+              <div class="tech-level">
+                <div class="level-bar" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">iOS Native</span>
+              <div class="tech-level">
+                <div class="level-bar" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Android Native</span>
+              <div class="tech-level">
+                <div class="level-bar" style="width: 78%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack-category">
+          <div class="category-header">
+            <div class="category-icon">☁️</div>
+            <h3>DevOps & Cloud</h3>
+          </div>
+          <div class="tech-list">
+            <div class="tech-item">
+              <span class="tech-name">AWS</span>
+              <div class="tech-level">
+                <div class="level-bar" style="width: 89%"></div>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Docker</span>
+              <div class="tech-level">
+                <div class="level-bar" style="width: 91%"></div>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Kubernetes</span>
+              <div class="tech-level">
+                <div class="level-bar" style="width: 82%"></div>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">CI/CD</span>
+              <div class="tech-level">
+                <div class="level-bar" style="width: 86%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Наши услуги</h2>
+        <p class="section-subtitle">
+          Полный цикл разработки от идеи до запуска в продакшен
+        </p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <div class="icon-wrapper">🌐</div>
+          </div>
+          <h3 class="service-title">Веб-разработка</h3>
+          <p class="service-description">
+            Создание современных веб-приложений с использованием React, Vue.js, Node.js. 
+            От лендингов до сложных SaaS-платформ.
+          </p>
+          <ul class="service-features">
+            <li>Адаптивный дизайн</li>
+            <li>SEO-оптимизация</li>
+            <li>Высокая производительность</li>
+            <li>Современная архитектура</li>
+          </ul>
+          <div class="service-price">от $2,000</div>
+        </div>
+
+        <div class="service-card featured">
+          <div class="service-badge">Популярно</div>
+          <div class="service-icon">
+            <div class="icon-wrapper">📱</div>
+          </div>
+          <h3 class="service-title">Мобильная разработка</h3>
+          <p class="service-description">
+            Нативные и кроссплатформенные мобильные приложения для iOS и Android. 
+            React Native, Flutter, нативная разработка.
+          </p>
+          <ul class="service-features">
+            <li>iOS & Android</li>
+            <li>React Native / Flutter</li>
+            <li>App Store публикация</li>
+            <li>Push-уведомления</li>
+          </ul>
+          <div class="service-price">от $3,500</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <div class="icon-wrapper">⚙️</div>
+          </div>
+          <h3 class="service-title">Backend & API</h3>
+          <p class="service-description">
+            Надёжные серверные решения, RESTful и GraphQL API, 
+            микросервисная архитектура, интеграции с внешними сервисами.
+          </p>
+          <ul class="service-features">
+            <li>REST / GraphQL API</li>
+            <li>Микросервисы</li>
+            <li>База данных</li>
+            <li>Безопасность</li>
+          </ul>
+          <div class="service-price">от $1,800</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <div class="icon-wrapper">🎨</div>
+          </div>
+          <h3 class="service-title">UI/UX Дизайн</h3>
+          <p class="service-description">
+            Современный пользовательский интерфейс и проектирование пользовательского опыта. 
+            От wireframes до готового дизайн-системы.
+          </p>
+          <ul class="service-features">
+            <li>Пользовательский опыт</li>
+            <li>Дизайн-система</li>
+            <li>Прототипирование</li>
+            <li>Usability тестирование</li>
+          </ul>
+          <div class="service-price">от $1,200</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <div class="icon-wrapper">☁️</div>
+          </div>
+          <h3 class="service-title">DevOps & Деплой</h3>
+          <p class="service-description">
+            Настройка инфраструктуры, автоматизация деплоя, мониторинг, 
+            масштабирование приложений в облаке.
+          </p>
+          <ul class="service-features">
+            <li>AWS / Google Cloud</li>
+            <li>Docker / Kubernetes</li>
+            <li>CI/CD пайплайны</li>
+            <li>Мониторинг</li>
+          </ul>
+          <div class="service-price">от $1,500</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <div class="icon-wrapper">🚀</div>
+          </div>
+          <h3 class="service-title">Техническое консультирование</h3>
+          <p class="service-description">
+            Аудит существующих проектов, выбор технологий, архитектурные решения, 
+            оптимизация производительности.
+          </p>
+          <ul class="service-features">
+            <li>Технический аудит</li>
+            <li>Архитектурные решения</li>
+            <li>Code review</li>
+            <li>Оптимизация</li>
+          </ul>
+          <div class="service-price">от $150/час</div>
+        </div>
       </div>
     </div>
   </section>
