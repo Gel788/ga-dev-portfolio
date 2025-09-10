@@ -328,6 +328,123 @@ function initCursorTrail() {
 // Initialize cursor trail
 initCursorTrail();
 
+// Contact Form Handling
+function initContactForm() {
+  const form = document.getElementById('contactForm');
+  const submitBtn = form.querySelector('.form-submit');
+  const successMessage = document.getElementById('formSuccess');
+  
+  if (!form) return;
+  
+  // Form validation
+  function validateField(field) {
+    const value = field.value.trim();
+    const fieldName = field.name;
+    const errorElement = document.getElementById(fieldName + 'Error');
+    
+    let isValid = true;
+    let errorMessage = '';
+    
+    // Required field validation
+    if (field.hasAttribute('required') && !value) {
+      isValid = false;
+      errorMessage = 'Это поле обязательно для заполнения';
+    }
+    
+    // Email validation
+    if (fieldName === 'email' && value) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(value)) {
+        isValid = false;
+        errorMessage = 'Введите корректный email адрес';
+      }
+    }
+    
+    // Name validation
+    if (fieldName === 'name' && value && value.length < 2) {
+      isValid = false;
+      errorMessage = 'Имя должно содержать минимум 2 символа';
+    }
+    
+    // Message validation
+    if (fieldName === 'message' && value && value.length < 10) {
+      isValid = false;
+      errorMessage = 'Сообщение должно содержать минимум 10 символов';
+    }
+    
+    // Show/hide error
+    if (errorElement) {
+      if (isValid) {
+        errorElement.classList.remove('show');
+        field.style.borderColor = '';
+      } else {
+        errorElement.classList.add('show');
+        errorElement.textContent = errorMessage;
+        field.style.borderColor = '#ef4444';
+      }
+    }
+    
+    return isValid;
+  }
+  
+  // Real-time validation
+  const inputs = form.querySelectorAll('input, select, textarea');
+  inputs.forEach(input => {
+    input.addEventListener('blur', () => validateField(input));
+    input.addEventListener('input', () => {
+      if (input.style.borderColor === 'rgb(239, 68, 68)') {
+        validateField(input);
+      }
+    });
+  });
+  
+  // Form submission
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Validate all fields
+    let isFormValid = true;
+    inputs.forEach(input => {
+      if (!validateField(input)) {
+        isFormValid = false;
+      }
+    });
+    
+    if (!isFormValid) {
+      return;
+    }
+    
+    // Show loading state
+    submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
+    
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Show success message
+      form.style.display = 'none';
+      successMessage.classList.add('show');
+      
+      // Reset form
+      form.reset();
+      
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('Произошла ошибка при отправке формы. Попробуйте еще раз.');
+    } finally {
+      // Hide loading state
+      submitBtn.classList.remove('loading');
+      submitBtn.disabled = false;
+    }
+  });
+}
+
+// Initialize contact form when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  initContactForm();
+});
+
 // Enhanced markdown parser for detailed case studies
 function parseMarkdown(markdown) {
   if (!markdown) return '';

@@ -1037,27 +1037,127 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact Form Section -->
   <section class="contact-section" id="contact">
     <div class="container">
-      <div class="contact-content">
-        <h2>Готовы начать проект?</h2>
-        <p>Расскажите о вашей идее, и мы поможем воплотить её в жизнь</p>
-        
-        <div class="contact-cta">
-          <a href="#" class="btn btn-primary btn-large">
-            Обсудить проект
-          </a>
+      <div class="contact-header">
+        <h2 class="section-title">Готовы начать проект?</h2>
+        <p class="section-subtitle">
+          Расскажите о вашей идее, и мы поможем воплотить её в жизнь
+        </p>
+      </div>
+      
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-icon">💬</div>
+            <h3>Быстрый ответ</h3>
+            <p>Отвечаем в течение 2 часов в рабочее время</p>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-icon">🎯</div>
+            <h3>Бесплатная консультация</h3>
+            <p>Обсудим ваш проект и дадим рекомендации</p>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-icon">⚡</div>
+            <h3>Быстрый старт</h3>
+            <p>Начинаем работу уже на следующий день</p>
+          </div>
         </div>
         
-        <div class="contact-info">
-          <div class="contact-item">
-            <span class="contact-label">Email:</span>
-            <span class="contact-value">hello@ga-dev.com</span>
-          </div>
-          <div class="contact-item">
-            <span class="contact-label">Telegram:</span>
-            <span class="contact-value">@gadev</span>
+        <div class="contact-form-container">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name" class="form-label">Ваше имя *</label>
+              <input type="text" id="name" name="name" class="form-input" required>
+              <div class="form-error" id="nameError"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="email" class="form-label">Email *</label>
+              <input type="email" id="email" name="email" class="form-input" required>
+              <div class="form-error" id="emailError"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone" class="form-label">Телефон</label>
+              <input type="tel" id="phone" name="phone" class="form-input">
+            </div>
+            
+            <div class="form-group">
+              <label for="company" class="form-label">Компания</label>
+              <input type="text" id="company" name="company" class="form-input">
+            </div>
+            
+            <div class="form-group">
+              <label for="projectType" class="form-label">Тип проекта *</label>
+              <select id="projectType" name="projectType" class="form-select" required>
+                <option value="">Выберите тип проекта</option>
+                <option value="web">Веб-сайт</option>
+                <option value="mobile">Мобильное приложение</option>
+                <option value="ecommerce">Интернет-магазин</option>
+                <option value="saas">SaaS платформа</option>
+                <option value="crm">CRM система</option>
+                <option value="other">Другое</option>
+              </select>
+              <div class="form-error" id="projectTypeError"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="budget" class="form-label">Бюджет</label>
+              <select id="budget" name="budget" class="form-select">
+                <option value="">Выберите бюджет</option>
+                <option value="under-5k">До $5,000</option>
+                <option value="5k-10k">$5,000 - $10,000</option>
+                <option value="10k-25k">$10,000 - $25,000</option>
+                <option value="25k-50k">$25,000 - $50,000</option>
+                <option value="over-50k">Свыше $50,000</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="timeline" class="form-label">Сроки</label>
+              <select id="timeline" name="timeline" class="form-select">
+                <option value="">Выберите сроки</option>
+                <option value="asap">Как можно скорее</option>
+                <option value="1-month">В течение месяца</option>
+                <option value="2-3-months">2-3 месяца</option>
+                <option value="3-6-months">3-6 месяцев</option>
+                <option value="flexible">Гибкие сроки</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message" class="form-label">Расскажите о проекте *</label>
+              <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Опишите вашу идею, цели проекта и любые особые требования..." required></textarea>
+              <div class="form-error" id="messageError"></div>
+            </div>
+            
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="privacy" name="privacy" required>
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-text">Я согласен с <a href="#" class="privacy-link">политикой конфиденциальности</a> *</span>
+              </label>
+              <div class="form-error" id="privacyError"></div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-large form-submit">
+              <span class="btn-text">Отправить заявку</span>
+              <span class="btn-icon">→</span>
+              <div class="btn-loading">
+                <div class="loading-spinner"></div>
+              </div>
+            </button>
+          </form>
+          
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">✅</div>
+            <h3>Заявка отправлена!</h3>
+            <p>Спасибо за обращение! Мы свяжемся с вами в течение 2 часов.</p>
           </div>
         </div>
       </div>
