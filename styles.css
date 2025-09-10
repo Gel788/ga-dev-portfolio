@@ -932,16 +932,27 @@ body::after {
 
 .section-title {
   font-size: var(--font-size-3xl);
-  font-weight: 600;
+  font-weight: 900;
   margin-bottom: var(--space-lg);
-  color: var(--text-primary);
+  background: linear-gradient(135deg, 
+    #ff6b35 0%, 
+    #f7931e 20%, 
+    #ffaa00 40%, 
+    #ff4500 60%,
+    #ff6b35 80%, 
+    #ffffff 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Segoe UI', 'Roboto', Arial, sans-serif;
   letter-spacing: -0.02em;
   text-shadow: 
     0 2px 4px rgba(0, 0, 0, 1),
     0 4px 8px rgba(0, 0, 0, 0.9),
     0 8px 16px rgba(0, 0, 0, 0.7),
-    0 0 40px rgba(255, 107, 53, 0.3);
+    0 0 50px rgba(255, 107, 53, 0.9),
+    0 0 100px rgba(247, 147, 30, 0.6) !important;
 }
 
 .section-subtitle {
@@ -2334,20 +2345,23 @@ p, span, a, li, .nav-links a, .footer-links a {
 
 .project-title {
   font-size: var(--font-size-xl);
-  font-weight: 700;
-  color: var(--text-primary);
+  font-weight: 800;
   margin-bottom: var(--space-sm);
-  text-shadow: 
-    0 2px 4px rgba(0, 0, 0, 0.9),
-    0 4px 8px rgba(255, 107, 53, 0.2);
   background: linear-gradient(135deg, 
-    var(--text-primary) 0%, 
-    rgba(255, 255, 255, 0.9) 50%, 
-    var(--text-primary) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+    #ff6b35 0%, 
+    #f7931e 25%, 
+    #ffaa00 50%, 
+    #ff4500 75%,
+    #ffffff 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 1),
+    0 4px 8px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(255, 107, 53, 0.8),
+    0 0 80px rgba(247, 147, 30, 0.4) !important;
 }
 
 .project-tags {
@@ -3046,13 +3060,23 @@ p, span, a, li, .nav-links a, .footer-links a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #ffffff !important;
+  background: linear-gradient(135deg, 
+    #ff6b35 0%, 
+    #f7931e 25%, 
+    #ffaa00 50%, 
+    #ff6b35 75%, 
+    #ffffff 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
   text-shadow: 
     0 2px 4px rgba(0, 0, 0, 1),
     0 4px 8px rgba(0, 0, 0, 0.95),
     0 8px 16px rgba(0, 0, 0, 0.8),
     0 12px 24px rgba(0, 0, 0, 0.6),
-    0 0 40px rgba(255, 107, 53, 0.6) !important;
+    0 0 40px rgba(255, 107, 53, 0.8),
+    0 0 80px rgba(247, 147, 30, 0.4) !important;
 }
 
 p, span, div, li, a {
@@ -3082,20 +3106,41 @@ p, span, div, li, a {
 }
 
 .section-title {
-  color: #ffffff !important;
+  background: linear-gradient(135deg, 
+    #ff6b35 0%, 
+    #f7931e 20%, 
+    #ffaa00 40%, 
+    #ff4500 60%,
+    #ff6b35 80%, 
+    #ffffff 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
   text-shadow: 
     0 2px 4px rgba(0, 0, 0, 1),
     0 4px 8px rgba(0, 0, 0, 0.9),
     0 8px 16px rgba(0, 0, 0, 0.7),
-    0 0 25px rgba(255, 107, 53, 0.4) !important;
+    0 0 50px rgba(255, 107, 53, 0.9),
+    0 0 100px rgba(247, 147, 30, 0.6) !important;
 }
 
 .project-title {
-  color: #ffffff !important;
+  background: linear-gradient(135deg, 
+    #ff6b35 0%, 
+    #f7931e 25%, 
+    #ffaa00 50%, 
+    #ff4500 75%,
+    #ffffff 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
   text-shadow: 
     0 2px 4px rgba(0, 0, 0, 1),
     0 4px 8px rgba(0, 0, 0, 0.9),
-    0 0 20px rgba(255, 107, 53, 0.4) !important;
+    0 0 40px rgba(255, 107, 53, 0.8),
+    0 0 80px rgba(247, 147, 30, 0.4) !important;
 }
 
 /* Case study text */
@@ -3103,7 +3148,24 @@ p, span, div, li, a {
 .case-body .subtitle,
 .prose h1,
 .prose h2,
-.prose h3,
+.prose h3 {
+  background: linear-gradient(135deg, 
+    #ff6b35 0%, 
+    #f7931e 30%, 
+    #ffaa00 60%, 
+    #ffffff 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 1),
+    0 4px 8px rgba(0, 0, 0, 0.9),
+    0 8px 16px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(255, 107, 53, 0.8),
+    0 0 80px rgba(247, 147, 30, 0.4) !important;
+}
+
 .prose p {
   color: #ffffff !important;
   text-shadow: 
