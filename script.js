@@ -445,7 +445,7 @@ function initContactForm() {
       }
       
       // Отправляем данные на сервер
-      const response = await fetch('submit-form.php', {
+      const response = await fetch('http://localhost:3000/submit-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 // Telegram Bot Configuration
 const BOT_TOKEN = '8018952789:AAEXaez1JqLbFmoVUWUknIjKxREJPdzamps';
-const CHAT_ID = 'YOUR_CHAT_ID'; // Замените на ваш Telegram ID
+const CHAT_ID = '143323192'; // Ваш реальный Chat ID
 
 // Middleware
 app.use(cors());
