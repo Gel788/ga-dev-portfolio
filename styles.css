@@ -10,11 +10,12 @@
 
 :root {
   /* Modern color system */
-  --bg-primary: #0a0a0b;
-  --bg-secondary: #111115;
-  --bg-tertiary: #1a1a20;
-  --bg-glass: rgba(0, 0, 0, 0.4);
-  --bg-glass-hover: rgba(0, 0, 0, 0.6);
+  --bg-primary: #000000;        /* Pure black luxury */
+  --bg-secondary: #0a0a0a;      /* Rich deep black */
+  --bg-tertiary: #1a1a1a;       /* Premium charcoal */
+  --bg-glass: rgba(0, 0, 0, 0.85);
+  --bg-glass-hover: rgba(0, 0, 0, 0.95);
+  --bg-luxury: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
   
   /* Text colors */
   --text-primary: #ffffff;
@@ -22,14 +23,19 @@
   --text-tertiary: #ffffff;
   --text-muted: #f0f0f0;
   
-  /* Border colors */
-  --border-primary: rgba(255, 255, 255, 0.06);
-  --border-secondary: rgba(255, 255, 255, 0.12);
-  --border-accent: rgba(255, 107, 53, 0.2);
+  /* Premium Border colors */
+  --border-primary: rgba(212, 175, 55, 0.15);   /* Gold border */
+  --border-secondary: rgba(212, 175, 55, 0.3);  /* Brighter gold */
+  --border-accent: rgba(212, 175, 55, 0.5);     /* Accent gold */
+  --border-platinum: rgba(229, 228, 226, 0.2);  /* Platinum border */
   
-  /* Accent colors */
-  --accent-primary: #ff6b35;
-  --accent-secondary: #f7931e;
+  /* Premium Luxury Colors */
+  --accent-primary: #d4af37;    /* Rich Gold */
+  --accent-secondary: #ffd700;  /* Bright Gold */
+  --accent-tertiary: #b8860b;   /* Dark Gold */
+  --platinum: #e5e4e2;          /* Platinum */
+  --champagne: #f7e7ce;         /* Champagne */
+  --bronze: #cd7f32;            /* Bronze */
   --accent-gradient: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
   --accent-glow: rgba(255, 107, 53, 0.15);
   
@@ -88,6 +94,12 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  /* Premium luxury overlay */
+  background-image: 
+    radial-gradient(ellipse at top left, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at top right, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(184, 134, 11, 0.06) 0%, transparent 60%);
 }
 
 /* Mars background with enhanced overlay */
@@ -99,14 +111,17 @@ body::before {
   width: 100vw;
   height: 100vh;
   background: 
-    /* Maximum dark overlay for perfect text readability */
+    /* Premium luxury overlay with gold accents */
     linear-gradient(135deg, 
-      rgba(0, 0, 0, 0.98) 0%, 
-      rgba(0, 0, 0, 0.99) 25%,
-      rgba(0, 0, 0, 0.985) 50%,
-      rgba(0, 0, 0, 0.995) 75%,
-      rgba(0, 0, 0, 0.99) 100%
+      rgba(0, 0, 0, 0.96) 0%, 
+      rgba(10, 10, 10, 0.97) 25%,
+      rgba(0, 0, 0, 0.95) 50%,
+      rgba(5, 5, 5, 0.98) 75%,
+      rgba(0, 0, 0, 0.96) 100%
     ),
+    /* Subtle gold highlights */
+    radial-gradient(ellipse 40% 30% at 20% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse 30% 40% at 80% 80%, rgba(255, 215, 0, 0.02) 0%, transparent 50%),
     /* Mars image */
     url('./field_image_marsandmoon_00.jpeg'),
     url('/field_image_marsandmoon_00.jpeg'),
@@ -456,7 +471,7 @@ body::after {
   }
 }
 
-/* Hero Section - Premium Design */
+/* Hero Section - Luxury Premium Design */
 .hero-section {
   min-height: 100vh;
   display: flex;
@@ -467,11 +482,15 @@ body::after {
   overflow: hidden;
   padding: var(--space-lg) 0;
   background: 
-    rgba(0, 0, 0, 0.6),
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 107, 53, 0.2), transparent),
-    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(247, 147, 30, 0.15), transparent),
-    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-  backdrop-filter: blur(20px);
+    rgba(0, 0, 0, 0.3),
+    radial-gradient(ellipse 70% 40% at 30% 20%, rgba(212, 175, 55, 0.12), transparent),
+    radial-gradient(ellipse 50% 30% at 70% 80%, rgba(255, 215, 0, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 50% 50%, rgba(184, 134, 11, 0.06), transparent),
+    linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+  backdrop-filter: blur(25px) saturate(150%);
+  
+  /* Premium luxury overlay */
+  position: relative;
 }
 
 .hero-content {
@@ -602,16 +621,40 @@ body::after {
 }
 
 .btn-primary {
-  background: var(--accent-gradient);
-  color: var(--text-primary);
-  box-shadow: var(--shadow-accent);
-  border-color: rgba(255, 107, 53, 0.3);
+  background: linear-gradient(135deg, 
+    var(--accent-primary) 0%,
+    var(--accent-secondary) 50%,
+    var(--accent-tertiary) 100%
+  );
+  color: #000000;
+  font-weight: 700;
+  border-color: var(--border-accent);
+  box-shadow: 
+    0 8px 32px rgba(212, 175, 55, 0.3),
+    0 4px 16px rgba(255, 215, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  
+  /* Premium metallic text effect */
+  text-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 16px 48px rgba(255, 107, 53, 0.25);
-  filter: brightness(1.1) saturate(1.1);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 
+    0 16px 64px rgba(212, 175, 55, 0.4),
+    0 8px 32px rgba(255, 215, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  filter: brightness(1.15) saturate(1.2);
+  
+  /* Enhanced gold glow on hover */
+  text-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(255, 215, 0, 0.8),
+    0 0 30px rgba(212, 175, 55, 0.4);
 }
 
 .btn-secondary {
@@ -935,12 +978,10 @@ body::after {
   font-weight: 900;
   margin-bottom: var(--space-lg);
   background: linear-gradient(135deg, 
-    #ff6b35 0%, 
-    #f7931e 20%, 
-    #ffaa00 40%, 
-    #ff4500 60%,
-    #ff6b35 80%, 
-    #ffffff 100%
+    #ffd700 0%,    /* Bright Gold */
+    #ffffff 40%,   /* White for readability */
+    #d4af37 70%,   /* Rich Gold */
+    #ffffff 100%   /* Pure White */
   ) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -951,8 +992,9 @@ body::after {
     0 2px 4px rgba(0, 0, 0, 1),
     0 4px 8px rgba(0, 0, 0, 0.9),
     0 8px 16px rgba(0, 0, 0, 0.7),
-    0 0 50px rgba(255, 107, 53, 0.9),
-    0 0 100px rgba(247, 147, 30, 0.6) !important;
+    0 0 60px rgba(212, 175, 55, 0.95),   /* Rich gold glow */
+    0 0 120px rgba(255, 215, 0, 0.7),    /* Bright gold glow */
+    0 0 180px rgba(184, 134, 11, 0.4) !important;  /* Deep gold glow */
 }
 
 .section-subtitle {
@@ -1067,20 +1109,23 @@ body::after {
 
 .project-card {
   background: linear-gradient(145deg, 
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0.5) 100%
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(10, 10, 10, 0.8) 50%,
+    rgba(0, 0, 0, 0.9) 100%
   );
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 24px;
+  border: 2px solid var(--border-primary);
+  border-radius: 28px;
   overflow: hidden;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
   position: relative;
   box-shadow: 
-    0 8px 40px rgba(0, 0, 0, 0.15),
-    0 2px 8px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    0 12px 60px rgba(0, 0, 0, 0.3),
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(212, 175, 55, 0.1),
+    inset 0 1px 0 rgba(255, 215, 0, 0.08),
+    inset 0 -1px 0 rgba(184, 134, 11, 0.05);
   text-decoration: none;
   color: inherit;
   display: block;
@@ -1088,12 +1133,17 @@ body::after {
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(255, 107, 53, 0.3);
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--border-accent);
   box-shadow: 
-    0 16px 40px rgba(0, 0, 0, 0.2),
-    0 6px 16px rgba(255, 107, 53, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 20px 80px rgba(0, 0, 0, 0.4),
+    0 10px 40px rgba(212, 175, 55, 0.2),
+    0 0 0 2px rgba(255, 215, 0, 0.15),
+    inset 0 1px 0 rgba(255, 215, 0, 0.15),
+    inset 0 -1px 0 rgba(184, 134, 11, 0.1);
+  
+  /* Luxury glow effect */
+  filter: brightness(1.05) saturate(1.1);
 }
 
 .project-card::before {
@@ -2348,11 +2398,9 @@ p, span, a, li, .nav-links a, .footer-links a {
   font-weight: 800;
   margin-bottom: var(--space-sm);
   background: linear-gradient(135deg, 
-    #ff6b35 0%, 
-    #f7931e 25%, 
-    #ffaa00 50%, 
-    #ff4500 75%,
-    #ffffff 100%
+    #ffd700 0%,    /* Bright Gold */
+    #ffffff 50%,   /* White for readability */
+    #d4af37 100%   /* Rich Gold */
   ) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -2843,10 +2891,20 @@ p, span, a, li, .nav-links a, .footer-links a {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 107, 53, 0.2);
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.97) 0%,
+    rgba(5, 5, 5, 0.95) 50%,
+    rgba(0, 0, 0, 0.98) 100%
+  );
+  backdrop-filter: blur(25px) saturate(180%);
+  border-bottom: 2px solid var(--border-primary);
+  transition: all 0.4s ease;
+  
+  /* Premium metallic shine */
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(212, 175, 55, 0.1),
+    inset 0 -1px 0 rgba(184, 134, 11, 0.05);
 }
 
 .navbar-container {
@@ -3060,23 +3118,29 @@ p, span, a, li, .nav-links a, .footer-links a {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
   background: linear-gradient(135deg, 
-    #ff6b35 0%, 
-    #f7931e 25%, 
-    #ffaa00 50%, 
-    #ff6b35 75%, 
-    #ffffff 100%
+    #d4af37 0%,    /* Rich Gold */
+    #ffd700 30%,   /* Bright Gold */
+    #ffffff 70%,   /* White for readability */
+    #f7e7ce 100%   /* Champagne */
   ) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
+  
+  /* Fallback for browsers that don't support background-clip */
+  @supports not (-webkit-background-clip: text) {
+    color: #ffd700 !important;
+  }
   text-shadow: 
+    0 1px 2px rgba(0, 0, 0, 1),
     0 2px 4px rgba(0, 0, 0, 1),
-    0 4px 8px rgba(0, 0, 0, 0.95),
-    0 8px 16px rgba(0, 0, 0, 0.8),
-    0 12px 24px rgba(0, 0, 0, 0.6),
-    0 0 40px rgba(255, 107, 53, 0.8),
-    0 0 80px rgba(247, 147, 30, 0.4) !important;
+    0 4px 8px rgba(0, 0, 0, 0.9),
+    0 6px 12px rgba(0, 0, 0, 0.8),
+    0 8px 16px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(212, 175, 55, 0.7),    /* Rich gold glow */
+    0 0 60px rgba(255, 215, 0, 0.4) !important;    /* Bright gold glow */
 }
 
 p, span, div, li, a {
@@ -3127,11 +3191,9 @@ p, span, div, li, a {
 
 .project-title {
   background: linear-gradient(135deg, 
-    #ff6b35 0%, 
-    #f7931e 25%, 
-    #ffaa00 50%, 
-    #ff4500 75%,
-    #ffffff 100%
+    #ffd700 0%,    /* Bright Gold */
+    #ffffff 50%,   /* White for readability */
+    #d4af37 100%   /* Rich Gold */
   ) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -3150,10 +3212,9 @@ p, span, div, li, a {
 .prose h2,
 .prose h3 {
   background: linear-gradient(135deg, 
-    #ff6b35 0%, 
-    #f7931e 30%, 
-    #ffaa00 60%, 
-    #ffffff 100%
+    #ffd700 0%,    /* Bright Gold */
+    #ffffff 60%,   /* White for readability */
+    #d4af37 100%   /* Rich Gold */
   ) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
