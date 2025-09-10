@@ -276,10 +276,10 @@ body::after {
   opacity: 1;
 }
 
-.nav-menu {
+.navbar-menu {
   display: flex;
   align-items: center;
-  gap: var(--space-2xl);
+  gap: var(--space-lg);
 }
 
 .nav-item {
@@ -387,7 +387,7 @@ body::after {
     font-size: var(--font-size-lg);
   }
   
-  .nav-menu {
+  .navbar-menu {
     gap: var(--space-xl);
   }
   
@@ -412,7 +412,7 @@ body::after {
     font-size: var(--font-size-md);
   }
   
-  .nav-menu {
+  .navbar-menu {
     gap: var(--space-sm);
     flex-wrap: wrap;
   }
@@ -440,7 +440,7 @@ body::after {
     font-size: var(--font-size-sm);
   }
   
-  .nav-menu {
+  .navbar-menu {
     gap: var(--space-xs);
     justify-content: center;
   }
@@ -2962,6 +2962,7 @@ p, span, a, li, .nav-links a, .footer-links a {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    z-index: 999;
   }
   
   .navbar-menu.active {
