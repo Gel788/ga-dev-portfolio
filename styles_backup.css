@@ -549,7 +549,7 @@ body::after {
   position: relative;
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Segoe UI', 'Roboto', Arial, sans-serif;
-  text-shadow: none;
+  text-shadow: none;.hero-title::before {
   content: '';
   position: absolute;
   top: -20px;
@@ -575,7 +575,7 @@ body::after {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.5;
-  text-shadow: none;
+  text-shadow: none;.hero-cta {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -620,7 +620,7 @@ body::after {
     inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   
   /* Premium metallic text effect */
-  text-shadow: none;
+  text-shadow: none;.btn-primary:hover {
   transform: translateY(-4px) scale(1.03);
   box-shadow: 
     0 16px 64px rgba(212, 175, 55, 0.4),
@@ -630,7 +630,7 @@ body::after {
   filter: brightness(1.15) saturate(1.2);
   
   /* Enhanced gold glow on hover */
-  text-shadow: none;
+  text-shadow: none;.btn-secondary {
   background: var(--bg-glass);
   color: var(--text-primary);
   border-color: var(--border-secondary);
@@ -959,7 +959,7 @@ body::after {
   font-size: var(--font-size-lg);
   color: var(--text-secondary);
   line-height: 1.6;
-  text-shadow: none;
+  text-shadow: none;/* About Section */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1150,10 +1150,10 @@ body::after {
   color: #ffffff !important;
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Segoe UI', 'Roboto', Arial, sans-serif;
   letter-spacing: -0.01em;
-  text-shadow: none;
+  text-shadow: none;.project-content p {
   color: var(--text-tertiary);
   line-height: 1.6;
-  text-shadow: none;
+  text-shadow: none;.project-tags {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
@@ -1311,8 +1311,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Segoe UI', 'Roboto', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: -0.01em;
-  text-shadow: none;
-  text-shadow: none;
+  text-shadow: none;p, span, a, li, .nav-links a, .footer-links a {
+  text-shadow: none;/* Case Study Layout - Premium Design */
 .case-layout {
   display: grid;
   grid-template-columns: 1fr 500px;
@@ -1342,13 +1342,13 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   margin-bottom: var(--space-lg);
   color: #ffffff;
-  text-shadow: none;
+  text-shadow: none;.case-body .subtitle {
   font-size: var(--font-size-xl);
   color: #e0e3e8;
   line-height: 1.5;
   margin-bottom: var(--space-2xl);
   font-weight: 500;
-  text-shadow: none;
+  text-shadow: none;.case-aside {
   position: sticky;
   top: var(--space-3xl);
   height: fit-content;
@@ -1441,12 +1441,12 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-xl);
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
-  text-shadow: none;
+  text-shadow: none;.prose h2 {
   font-size: var(--font-size-2xl);
   font-weight: 600;
   margin: var(--space-3xl) 0 var(--space-lg);
   color: #ffffff;
-  text-shadow: none;
+  text-shadow: none;.prose h2:first-of-type {
   margin-top: 0;
 }
 
@@ -1466,7 +1466,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   margin: var(--space-2xl) 0 var(--space-md);
   color: #ffffff;
-  text-shadow: none;
+  text-shadow: none;.prose p {
   margin-bottom: var(--space-xl);
   text-align: justify;
   hyphens: auto;
@@ -1529,7 +1529,7 @@ h1, h2, h3, h4, h5, h6 {
 .prose strong {
   color: #ffffff;
   font-weight: 600;
-  text-shadow: none;
+  text-shadow: none;/* Специальные стили для абзацев с ключевой информацией */
 .prose p:has(strong:only-child),
 .prose p > strong:first-child:last-child {
   background: linear-gradient(135deg, 
@@ -2259,7 +2259,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: var(--font-size-sm);
   color: var(--text-secondary);
   margin-bottom: var(--space-lg);
-  text-shadow: none;
+  text-shadow: none;.project-content p::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -2302,7 +2302,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   backdrop-filter: blur(10px);
-  text-shadow: none;
+  text-shadow: none;.project-tags .tag:hover {
   background: linear-gradient(135deg, 
     rgba(255, 107, 53, 0.2) 0%, 
     rgba(247, 147, 30, 0.2) 100%
@@ -2330,11 +2330,11 @@ h1, h2, h3, h4, h5, h6 {
   font-size: var(--font-size-xs);
   color: var(--text-muted);
   font-weight: 500;
-  text-shadow: none;
+  text-shadow: none;.result-value {
   font-size: var(--font-size-sm);
   font-weight: 700;
   color: var(--accent-primary);
-  text-shadow: none;
+  text-shadow: none;/* Enhanced hover effects for project cards */
 .project-card:hover .project-title {
   background: linear-gradient(135deg, 
     var(--accent-primary) 0%, 
@@ -2349,10 +2349,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-card:hover .project-content p {
   color: var(--text-primary);
-  text-shadow: none;
-}
-
-@keyframes shimmer {
+  text-shadow: none;@keyframes shimmer {
   0%, 100% { background-position: -200% center; }
   50% { background-position: 200% center; }
 }
@@ -2369,7 +2366,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin-top: var(--space-2xl);
   margin-bottom: var(--space-lg);
-  text-shadow: none;
+  text-shadow: none;.prose-new h1 {
   font-size: var(--font-size-3xl);
   background: linear-gradient(135deg, 
     var(--text-primary) 0%, 
@@ -2396,10 +2393,10 @@ h1, h2, h3, h4, h5, h6 {
 .prose-new p {
   margin-bottom: var(--space-lg);
   text-align: justify;
-  text-shadow: none;
+  text-shadow: none;.prose-new strong {
   color: var(--text-primary);
   font-weight: 700;
-  text-shadow: none;
+  text-shadow: none;.prose-new em {
   color: var(--accent-primary);
   font-style: italic;
 }
@@ -2412,7 +2409,7 @@ h1, h2, h3, h4, h5, h6 {
 .prose-new li {
   margin-bottom: var(--space-sm);
   position: relative;
-  text-shadow: none;
+  text-shadow: none;.prose-new li::marker {
   color: var(--accent-primary);
   font-weight: bold;
 }
@@ -2432,7 +2429,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin: 2px 4px;
-  text-shadow: none;
+  text-shadow: none;/* Special styling for numbered sections */
 .prose-new p:has(+ h1),
 .prose-new p:has(+ h2),
 .prose-new p:has(+ h3) {
@@ -2567,7 +2564,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 
     0 4px 12px rgba(255, 107, 53, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  text-shadow: none;
+  text-shadow: none;.detailed-analysis .tech-tags {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-xs);
@@ -2592,7 +2589,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  text-shadow: none;
+  text-shadow: none;.detailed-analysis .tech-tag:hover {
   background: linear-gradient(135deg, 
     rgba(255, 107, 53, 0.3) 0%, 
     rgba(247, 147, 30, 0.3) 100%
@@ -2610,7 +2607,7 @@ h1, h2, h3, h4, h5, h6 {
   );
   padding: 2px 6px;
   border-radius: var(--radius-sm);
-  text-shadow: none;
+  text-shadow: none;.detailed-analysis .emphasis {
   color: var(--accent-primary);
   font-style: italic;
   font-weight: 600;
@@ -2626,7 +2623,7 @@ h1, h2, h3, h4, h5, h6 {
 .detailed-analysis .external-link:hover {
   color: var(--text-primary);
   border-bottom-style: solid;
-  text-shadow: none;
+  text-shadow: none;.detailed-analysis .metric {
   display: inline-block;
   background: linear-gradient(135deg, 
     rgba(255, 107, 53, 0.2) 0%, 
@@ -2638,7 +2635,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-md);
   border: 1px solid rgba(255, 107, 53, 0.4);
   font-size: var(--font-size-sm);
-  text-shadow: none;
+  text-shadow: none;.detailed-analysis .metrics-highlight {
   text-align: center;
   margin: var(--space-xl) 0;
   padding: var(--space-lg);
@@ -2685,7 +2682,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   font-size: var(--font-size-xs);
   font-weight: 700;
-  text-shadow: none;
+  text-shadow: none;.detailed-analysis .bullet-item {
   margin-bottom: var(--space-md);
   padding: var(--space-sm) var(--space-md) var(--space-sm) var(--space-xl);
   position: relative;
@@ -2749,14 +2746,14 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: none;
+  text-shadow: none;.brand-subtitle {
   font-size: var(--font-size-xs);
   color: var(--accent-primary);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-top: -2px;
-  text-shadow: none;
+  text-shadow: none;.navbar-menu {
   display: flex;
   align-items: center;
   gap: var(--space-lg);
@@ -2774,7 +2771,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: var(--font-size-sm);
   transition: all 0.3s ease;
   position: relative;
-  text-shadow: none;
+  text-shadow: none;.navbar-link:hover {
   color: #ffffff;
   background: rgba(255, 107, 53, 0.1);
   transform: translateY(-1px);
@@ -2931,7 +2928,7 @@ p, span, div, li, a {
 
 .nav-brand {
   color: #ffffff !important;
-  text-shadow: none;
+  text-shadow: none;.section-title {
   background: linear-gradient(135deg, 
     #ff6b35 0%, 
     #f7931e 20%, 
@@ -2943,7 +2940,7 @@ p, span, div, li, a {
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
-  text-shadow: none;
+  text-shadow: none;.project-title {
   color: #ffffff !important;
 }
 
@@ -3013,13 +3010,13 @@ p, span, div, li, a {
   color: var(--accent-primary);
   text-decoration: none;
   transition: color 0.3s ease;
-  text-shadow: none;
+  text-shadow: none;.case-breadcrumb a:hover {
   color: #ffffff;
 }
 
 .case-breadcrumb span {
   color: var(--text-muted);
-  text-shadow: none;
+  text-shadow: none;.case-title {
   font-size: clamp(48px, 8vw, 72px);
   font-weight: 900;
   color: #ffffff;
@@ -3028,17 +3025,17 @@ p, span, div, li, a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: none;
+  text-shadow: none;.case-subtitle {
   font-size: var(--font-size-xl);
   color: var(--accent-primary);
   font-weight: 600;
   margin-bottom: var(--space-md);
-  text-shadow: none;
+  text-shadow: none;.case-description {
   font-size: var(--font-size-lg);
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: var(--space-xl);
-  text-shadow: none;
+  text-shadow: none;.case-tags {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
@@ -3055,7 +3052,7 @@ p, span, div, li, a {
   border-radius: var(--radius-full);
   font-size: var(--font-size-sm);
   font-weight: 600;
-  text-shadow: none;
+  text-shadow: none;.case-hero-image {
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -3117,7 +3114,7 @@ p, span, div, li, a {
   font-size: var(--font-size-lg);
   font-weight: 700;
   margin-bottom: var(--space-lg);
-  text-shadow: none;
+  text-shadow: none;.info-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3132,10 +3129,10 @@ p, span, div, li, a {
 .info-label {
   color: var(--text-tertiary);
   font-weight: 500;
-  text-shadow: none;
+  text-shadow: none;.info-value {
   color: #ffffff;
   font-weight: 600;
-  text-shadow: none;
+  text-shadow: none;.case-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: var(--space-md);
@@ -3409,11 +3406,11 @@ p, span, div, li, a {
   font-size: var(--font-size-2xl);
   font-weight: 800;
   margin-bottom: var(--space-sm);
-  text-shadow: none;
+  text-shadow: none;.tech-group-header p {
   color: #ffffff;
   font-size: var(--font-size-md);
   line-height: 1.6;
-  text-shadow: none;
+  text-shadow: none;.tech-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--space-lg);
@@ -3470,13 +3467,13 @@ p, span, div, li, a {
   font-size: var(--font-size-lg);
   font-weight: 700;
   margin-bottom: var(--space-sm);
-  text-shadow: none;
+  text-shadow: none;.tech-level {
   font-size: var(--font-size-sm);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: var(--space-xs);
-  text-shadow: none;
+  text-shadow: none;.tech-card.expert .tech-level {
   color: var(--accent-primary);
 }
 
@@ -3491,7 +3488,7 @@ p, span, div, li, a {
 .tech-experience {
   color: #ffffff;
   font-size: var(--font-size-xs);
-  text-shadow: none;
+  text-shadow: none;.tech-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--space-xl);
@@ -3521,11 +3518,11 @@ p, span, div, li, a {
   font-size: var(--font-size-3xl);
   font-weight: 900;
   margin-bottom: var(--space-sm);
-  text-shadow: none;
+  text-shadow: none;.stat-label {
   color: #ffffff;
   font-size: var(--font-size-sm);
   font-weight: 600;
-  text-shadow: none;
+  text-shadow: none;/* Services Section */
 .services-section {
   padding: var(--space-4xl) 0;
   background: linear-gradient(135deg, 
@@ -3593,7 +3590,7 @@ p, span, div, li, a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  text-shadow: none;
+  text-shadow: none;.service-icon {
   margin-bottom: var(--space-lg);
 }
 
@@ -3617,11 +3614,11 @@ p, span, div, li, a {
   font-size: var(--font-size-xl);
   font-weight: 700;
   margin-bottom: var(--space-md);
-  text-shadow: none;
+  text-shadow: none;.service-description {
   color: #ffffff;
   line-height: 1.6;
   margin-bottom: var(--space-lg);
-  text-shadow: none;
+  text-shadow: none;.service-features {
   list-style: none;
   padding: 0;
   margin: 0 0 var(--space-xl) 0;
@@ -3632,7 +3629,7 @@ p, span, div, li, a {
   padding: var(--space-xs) 0;
   position: relative;
   padding-left: var(--space-lg);
-  text-shadow: none;
+  text-shadow: none;.service-features li::before {
   content: '✓';
   position: absolute;
   left: 0;
@@ -3649,7 +3646,7 @@ p, span, div, li, a {
   background: rgba(255, 107, 53, 0.1);
   border-radius: var(--radius-md);
   border: 1px solid rgba(255, 107, 53, 0.3);
-  text-shadow: none;
+  text-shadow: none;/* Responsive Stack & Services */
 @media (max-width: 1024px) {
   .tech-showcase {
     grid-template-columns: 1fr;
@@ -3755,11 +3752,3 @@ p, span, div, li, a {
   }
 }
 
-
-}
-}
-}
-}
-}
-}
-}
