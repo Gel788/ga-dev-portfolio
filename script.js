@@ -7,10 +7,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const navbarToggle = document.getElementById('navbar-toggle');
   const navbarMenu = document.getElementById('navbar-menu');
   
+  console.log('Navbar Toggle:', navbarToggle);
+  console.log('Navbar Menu:', navbarMenu);
+  
   if (navbarToggle && navbarMenu) {
+    console.log('Elements found, adding event listener');
     navbarToggle.addEventListener('click', function() {
+      console.log('Toggle clicked!');
       navbarToggle.classList.toggle('active');
       navbarMenu.classList.toggle('active');
+      console.log('Toggle active:', navbarToggle.classList.contains('active'));
+      console.log('Menu active:', navbarMenu.classList.contains('active'));
     });
     
     // Close mobile menu when clicking on a link
