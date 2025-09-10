@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const navbarMenu = document.getElementById('navbar-menu');
   
   if (navbarToggle && navbarMenu) {
-    navbarToggle.addEventListener('click', function() {
+    navbarToggle.addEventListener('click', function(e) {
+      e.preventDefault();
       navbarToggle.classList.toggle('active');
       navbarMenu.classList.toggle('active');
     });
@@ -94,29 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Active navigation link highlighting
-  const navLinks = document.querySelectorAll('.nav-item[href^="#"]');
-  const sections = document.querySelectorAll('section[id]');
-  
-  function highlightActiveLink() {
-    const scrollPos = window.scrollY + 100;
-    
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const bottom = top + section.offsetHeight;
-      const id = section.getAttribute('id');
-      const navLink = document.querySelector(`.nav-links a[href="#${id}"]`);
-      
-      if (navLink) {
-        if (scrollPos >= top && scrollPos < bottom) {
-          navLinks.forEach(link => link.classList.remove('active'));
-          navLink.classList.add('active');
-        }
-      }
-    });
-  }
-  
-  window.addEventListener('scroll', highlightActiveLink);
+  // Active navigation link highlighting (merged with updateActiveLink above)
   
   // Update progress indicator on scroll
   window.addEventListener('scroll', () => {
@@ -210,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!ticking) {
       requestAnimationFrame(() => {
         handleScroll();
-        highlightActiveLink();
+        updateActiveLink();
         ticking = false;
       });
       ticking = true;
@@ -221,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Initialize
   handleScroll();
-  highlightActiveLink();
+  updateActiveLink();
 });
 
 // Preload critical images
