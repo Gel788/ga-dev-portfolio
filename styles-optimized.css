@@ -1482,3 +1482,24 @@ button:hover::after,
   z-index: 10000;
   transition: width 0.1s ease;
 }
+
+/* ========================================
+   CASE STUDIES
+   ======================================== */
+.case-logo {
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+.case-logo img {
+  max-width: 120px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+}
+
+.case-logo img:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-xl);
+}
