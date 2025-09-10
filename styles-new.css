@@ -1,0 +1,96 @@
+/* ========================================
+   GA-DEV PORTFOLIO - MODULAR CSS
+   ======================================== */
+
+/* Import all CSS modules */
+@import url('css/base.css');
+@import url('css/components.css');
+@import url('css/animations.css');
+@import url('css/sections.css');
+@import url('css/responsive.css');
+
+/* ========================================
+   ADDITIONAL UTILITIES
+   ======================================== */
+
+/* Scroll progress indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--accent-gradient);
+  z-index: 10000;
+  transition: width 0.1s ease;
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid var(--accent-primary);
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Focus visible for better accessibility */
+.focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--accent-primary);
+  color: var(--text-primary);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 10001;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border-primary: rgba(255, 255, 255, 0.3);
+    --border-secondary: rgba(255, 255, 255, 0.5);
+    --text-muted: #ffffff;
+  }
+}
+
+/* Dark mode support (already dark by default) */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    --text-primary: #1e293b;
+    --text-secondary: #334155;
+    --text-tertiary: #475569;
+    --text-muted: #64748b;
+  }
+}

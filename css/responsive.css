@@ -1,0 +1,338 @@
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* ========================================
+   LARGE DESKTOP (1536px+)
+   ======================================== */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 var(--space-2xl);
+  }
+  
+  .stack-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    margin: var(--space-3xl) auto 0;
+  }
+}
+
+/* ========================================
+   DESKTOP (1024px - 1535px)
+   ======================================== */
+@media (max-width: 1024px) {
+  .navbar-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--bg-glass);
+    backdrop-filter: blur(25px);
+    border-bottom: 1px solid var(--border-primary);
+    flex-direction: column;
+    padding: var(--space-xl);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+  
+  .navbar-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .navbar-toggle {
+    display: flex;
+  }
+  
+  .hero-section {
+    min-height: 45vh;
+    padding: var(--space-md) 0;
+  }
+  
+  .hero-title {
+    font-size: clamp(28px, 5vw, 64px);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-lg);
+    max-width: 500px;
+  }
+  
+  .hero-floating {
+    width: 300px;
+    height: 300px;
+    top: 15%;
+    right: 5%;
+  }
+  
+  .hero-floating:nth-child(2) {
+    width: 250px;
+    height: 250px;
+    bottom: 15%;
+    left: 5%;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+  
+  .projects-grid {
+    gap: var(--space-xl);
+  }
+  
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+/* ========================================
+   TABLET (768px - 1023px)
+   ======================================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+  
+  .hero-section {
+    min-height: 40vh;
+    padding: var(--space-sm) 0;
+    text-align: center;
+  }
+  
+  .hero-content {
+    padding: 0 var(--space-md);
+  }
+  
+  .hero-title {
+    font-size: clamp(24px, 6vw, 48px);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-md);
+    max-width: 400px;
+    margin: 0 auto var(--space-lg);
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-floating {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    right: -50px;
+    opacity: 0.5;
+  }
+  
+  .hero-floating:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    bottom: 10%;
+    left: -50px;
+    opacity: 0.5;
+  }
+  
+  .clients-marquee {
+    gap: var(--space-xl);
+  }
+  
+  .client-logo img {
+    height: 32px;
+  }
+  
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .stack-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .contact-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ========================================
+   MOBILE (480px - 767px)
+   ======================================== */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-sm);
+  }
+  
+  .navbar-container {
+    padding: 0 var(--space-md);
+  }
+  
+  .hero-section {
+    min-height: 35vh;
+    padding: var(--space-xs) 0;
+  }
+  
+  .hero-content {
+    padding: 0 var(--space-sm);
+  }
+  
+  .hero-title {
+    font-size: clamp(20px, 7vw, 36px);
+    margin-bottom: var(--space-xs);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-sm);
+    max-width: 300px;
+    margin-bottom: var(--space-md);
+  }
+  
+  .hero-floating,
+  .hero-floating:nth-child(2) {
+    display: none;
+  }
+  
+  .clients-marquee {
+    gap: var(--space-lg);
+  }
+  
+  .client-logo img {
+    height: 28px;
+  }
+  
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .section-title {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-2xl);
+  }
+  
+  .card,
+  .project-card,
+  .stack-category,
+  .service-card {
+    padding: var(--space-lg);
+  }
+  
+  .btn {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* ========================================
+   SMALL MOBILE (320px - 479px)
+   ======================================== */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 var(--space-xs);
+  }
+  
+  .hero-title {
+    font-size: clamp(18px, 8vw, 32px);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-xs);
+  }
+  
+  .section-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .card,
+  .project-card,
+  .stack-category,
+  .service-card {
+    padding: var(--space-md);
+  }
+  
+  .btn {
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* ========================================
+   LANDSCAPE ORIENTATION
+   ======================================== */
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero-section {
+    min-height: 100vh;
+    padding: var(--space-sm) 0;
+  }
+  
+  .hero-title {
+    font-size: clamp(24px, 4vw, 48px);
+    margin-bottom: var(--space-xs);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-md);
+  }
+  
+  .hero-actions {
+    flex-direction: row;
+    gap: var(--space-md);
+  }
+}
+
+/* ========================================
+   HIGH DPI DISPLAYS
+   ======================================== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-floating,
+  .hero-floating:nth-child(2) {
+    transform: scale(0.8);
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+  .navbar,
+  .hero-floating,
+  .cursor-trail {
+    display: none;
+  }
+  
+  .hero-section {
+    min-height: auto;
+    padding: var(--space-lg) 0;
+  }
+  
+  .section {
+    padding: var(--space-lg) 0;
+  }
+  
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+}
