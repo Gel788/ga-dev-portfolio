@@ -1475,7 +1475,7 @@ body {
     top: 70px;
     left: 0;
     right: 0;
-    background: var(--bg-glass);
+    background: rgba(15, 15, 20, 0.95);
     backdrop-filter: blur(25px);
     border-bottom: 1px solid var(--border-primary);
     flex-direction: column;
@@ -1485,6 +1485,7 @@ body {
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 999;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
   
   .navbar-menu.active {
@@ -1548,6 +1549,35 @@ body {
   .stack-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-lg);
+  }
+  
+  .stack-category {
+    padding: var(--space-md);
+  }
+  
+  .stack-category h3 {
+    font-size: var(--font-size-md);
+  }
+  
+  .stack-category p {
+    font-size: var(--font-size-sm);
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .service-card {
+    padding: var(--space-lg);
+  }
+  
+  .service-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .service-description {
+    font-size: var(--font-size-sm);
   }
 }
 
@@ -1613,6 +1643,7 @@ body {
   
   .about-visual-card {
     max-width: 100%;
+    padding: var(--space-md);
   }
   
   .values-grid {
@@ -1620,9 +1651,50 @@ body {
     gap: var(--space-md);
   }
   
+  .about-hero-title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .about-hero-subtitle {
+    font-size: var(--font-size-lg);
+  }
+  
+  .about-hero-description {
+    font-size: var(--font-size-md);
+  }
+  
   .projects-grid {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
+  }
+  
+  .project-card {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .project-image {
+    height: 200px;
+  }
+  
+  .project-logo {
+    width: 50px;
+    height: 35px;
+  }
+  
+  .project-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .project-description {
+    font-size: var(--font-size-sm);
+  }
+  
+  .project-features {
+    gap: var(--space-xs);
+  }
+  
+  .feature-item {
+    padding: var(--space-xs) 0;
   }
   
   .project-header {
@@ -1716,6 +1788,50 @@ body {
     padding: var(--space-2xl) 0;
   }
   
+  .about-hero-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .about-hero-subtitle {
+    font-size: var(--font-size-md);
+  }
+  
+  .about-hero-description {
+    font-size: var(--font-size-sm);
+  }
+  
+  .values-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .value-card {
+    padding: var(--space-md);
+  }
+  
+  .value-card h4 {
+    font-size: var(--font-size-md);
+  }
+  
+  .value-card p {
+    font-size: var(--font-size-xs);
+  }
+  
+  .stat-card {
+    padding: var(--space-md);
+  }
+  
+  .stat-number {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .stat-label {
+    font-size: var(--font-size-xs);
+  }
+  
+  .stat-description {
+    font-size: var(--font-size-xs);
+  }
+  
   .section-title {
     font-size: var(--font-size-3xl);
     margin-bottom: var(--space-2xl);
@@ -1757,6 +1873,14 @@ body {
   .btn {
     padding: var(--space-sm) var(--space-lg);
     font-size: var(--font-size-sm);
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    gap: var(--space-md);
+    align-items: center;
   }
 }
 
