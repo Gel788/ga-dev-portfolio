@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Womansy — кейс</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <main class="container section case-layout">
+    <div class="case-body">
+      <a href="../index.html" class="case-back-btn">← На главную</a>
+      <h1 style="margin:0 0 12px">Womansy</h1>
+      <p class="subtitle" style="margin:0 20px 20px 0">Гармония и баланс — трекер женского здоровья</p>
+      <article id="md" class="prose"></article>
+    </div>
+    <aside class="case-aside">
+      <div class="case-hero"><img src="Womansy/19.jpg" alt="Womansy скриншот"></div>
+      <div class="gallery">
+        <img src="Womansy/18.jpg" alt="Womansy экран 1" data-lightbox>
+      </div>
+    </aside>
+  </main>
+  <div class="lightbox-backdrop" id="lb"><img alt="" id="lbimg"></div>
+  <script>
+    fetch('Womansy/Womansy.md').then(r => r.text()).then(t => { document.getElementById('md').innerHTML = marked.parse(t); });
+    document.addEventListener('click', (e)=>{ const img=e.target.closest('[data-lightbox]'); if(!img) return; const lb=document.getElementById('lb'); const lbimg=document.getElementById('lbimg'); lbimg.src=img.src; lb.classList.add('active'); });
+    document.getElementById('lb').addEventListener('click', ()=>{ document.getElementById('lb').classList.remove('active'); });
+  </script>
+</body>
+</html>
+
+

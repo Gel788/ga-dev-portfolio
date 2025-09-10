@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GA‑DEV — студия веб и мобильной разработки</title>
+  <meta name="description" content="GA‑DEV — создаём премиальные сайты и мобильные приложения с упором на архитектуру, перформанс и безупречный UX.">
+  <meta property="og:title" content="GA‑DEV — студия разработки">
+  <meta property="og:description" content="Веб и мобильные продукты: скорость, архитектура, перформанс, плавные интерфейсы.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:5173">
+  <meta property="og:image" content="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#0b0c0f">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles_new.css">
+  <script>
+    (function(){ const s=localStorage.getItem('theme'); if(s==='light') document.documentElement.dataset.theme='light'; })();
+  </script>
+</head>
+<body class="noise">
+  <div class="particles" aria-hidden="true"></div>
+  <a href="#portfolio" class="skip-link">Перейти к контенту</a>
+  <header class="site-header">
+    <div class="site-nav">
+      <div class="container nav-inner">
+        <div class="brand">GA‑DEV</div>
+        <div class="links">
+          <a class="button secondary" href="#about">О нас</a>
+          <a class="button secondary" href="#projects">Кейсы</a>
+          <a class="button" href="#contact">Связаться</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="hero">
+        <div class="hero-badge">Premium Engineering</div>
+        <h1 class="gradient-text">GA‑DEV</h1>
+        <p class="subtitle">Студия разработки веб и мобильных продуктов</p>
+        <p class="note">Архитектура • Перформанс • Плавные интерфейсы</p>
+        <div class="value-prop">
+          <span>Скорость вывода</span>
+          <span>Чистая архитектура</span>
+          <span>Плавные анимации</span>
+          <span>Перформанс</span>
+        </div>
+        <div class="badges">
+          <span class="badge">TypeScript</span>
+          <span class="badge">React / Next.js</span>
+          <span class="badge">React Native</span>
+          <span class="badge">Node.js</span>
+        </div>
+        <div class="hero-cta">
+          <a class="button" href="mailto:hello@albnrt.dev">Связаться</a>
+          <a class="button secondary" href="#portfolio">Портфолио</a>
+          <button id="themeToggle" class="button secondary" type="button">Тема</button>
+        </div>
+
+        <ul class="social">
+          <li><a href="#" aria-label="GitHub" title="GitHub">GH</a></li>
+          <li><a href="#" aria-label="LinkedIn" title="LinkedIn">in</a></li>
+          <li><a href="#" aria-label="Telegram" title="Telegram">TG</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="kpi-strip" aria-label="Показатели">
+      <div class="kpi-strip-inner container">
+        <div class="kpi"><div class="kpi-num">10+ лет</div><div class="kpi-label">опыта</div></div>
+        <div class="kpi"><div class="kpi-num">40+ проектов</div><div class="kpi-label">в проде</div></div>
+        <div class="kpi"><div class="kpi-num">Web • iOS • Android</div><div class="kpi-label">мультиплатформа</div></div>
+      </div>
+    </div>
+
+    <div class="clients-strip" aria-label="Клиенты">
+      <div class="clients-strip-inner container">
+        <div class="clients-marquee">
+          <img src="icons%20for%20jobs/client_acba.webp" alt="ACBA" loading="lazy">
+          <img src="icons%20for%20jobs/client_ameria_bank.svg" alt="Ameria Bank" loading="lazy">
+          <img src="icons%20for%20jobs/client_arloopa.svg" alt="Arloopa" loading="lazy">
+          <img src="icons%20for%20jobs/client_agveran_ararat_resort.svg" alt="Aghveran Ararat Resort" loading="lazy">
+          <img src="icons%20for%20jobs/client_matenadaran.svg" alt="Matenadaran" loading="lazy">
+          <img src="icons%20for%20jobs/client_ararat.svg" alt="Ararat" loading="lazy">
+          <img src="icons%20for%20jobs/client_acba.webp" alt="ACBA" loading="lazy">
+          <img src="icons%20for%20jobs/client_ameria_bank.svg" alt="Ameria Bank" loading="lazy">
+          <img src="icons%20for%20jobs/client_arloopa.svg" alt="Arloopa" loading="lazy">
+          <img src="icons%20for%20jobs/client_agveran_ararat_resort.svg" alt="Aghveran Ararat Resort" loading="lazy">
+          <img src="icons%20for%20jobs/client_matenadaran.svg" alt="Matenadaran" loading="lazy">
+          <img src="icons%20for%20jobs/client_ararat.svg" alt="Ararat" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="portfolio">
+    <section class="section about reveal" id="about">
+      <h2 class="section-title">О нас</h2>
+      <div class="about-grid" data-stagger>
+        <div class="about-left">
+          <p class="lead">GA‑DEV проектирует и разрабатывает цифровые продукты уровня компании: сильная архитектура, чистый код и плавные интерфейсы.</p>
+          <ul class="about-list">
+            <li>Продуктовая работа: от гипотез и прототипов до релиза и поддержки</li>
+            <li>Прозрачные планы, короткие итерации, метрики качества</li>
+            <li>Технологии без «магии»: понятная инфраструктура и CI/CD</li>
+          </ul>
+          <div class="about-metrics" data-stagger>
+            <div class="metric"><div class="num">≤ 2 нед.</div><div class="lbl">первый инкремент</div></div>
+            <div class="metric"><div class="num">A</div><div class="lbl">Core Web Vitals</div></div>
+            <div class="metric"><div class="num">99.9%</div><div class="lbl">аптайм целей</div></div>
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="about-card">
+            <div class="avatar" aria-hidden="true"></div>
+            <div class="about-card-body">
+              <div class="title">Команда инженеров</div>
+              <div class="muted">Full‑Stack • Mobile • Backend</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stack reveal" id="stack">
+      <h2 class="section-title">Стек</h2>
+      <div class="stack-wrap" data-stagger>
+        <div class="stack-col">
+          <div class="stack-title">Фронтенд</div>
+          <ul class="chips">
+            <li>TypeScript</li>
+            <li>React / Next.js</li>
+            <li>Tailwind / CSS‑in‑JS</li>
+            <li>SSR / SSG</li>
+          </ul>
+        </div>
+        <div class="stack-col">
+          <div class="stack-title">Мобайл</div>
+          <ul class="chips">
+            <li>React Native</li>
+            <li>Reanimated</li>
+            <li>Native Modules</li>
+          </ul>
+        </div>
+        <div class="stack-col">
+          <div class="stack-title">Бэкенд</div>
+          <ul class="chips">
+            <li>Node.js / NestJS</li>
+            <li>PostgreSQL</li>
+            <li>REST / GraphQL</li>
+            <li>CI/CD</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services reveal" id="services">
+      <h2 class="section-title">Услуги</h2>
+      <div class="services-grid" data-stagger>
+        <article class="service">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="4" width="18" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8 20h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-body">
+            <h3>Веб‑продукты</h3>
+            <p>Лендинги, корпоративные сайты и сложные SPA/SSR. Производительность и SEO.</p>
+          </div>
+        </article>
+        <article class="service">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="7" y="2" width="10" height="20" rx="2" ry="2" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="18" r="1" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="service-body">
+            <h3>Мобильные приложения</h3>
+            <p>iOS/Android на React Native: нативные ощущения, гладкие анимации, стабильность.</p>
+          </div>
+        </article>
+        <article class="service">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-body">
+            <h3>Платформа</h3>
+            <p>API, БД, авторизация, платежи, наблюдаемость. Документация и онбординг.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="portfolio-logos">
+      <h2 class="section-title">Клиенты</h2>
+      <div class="logo-grid">
+        <figure class="logo-card">
+          <img src="icons%20for%20jobs/client_acba.webp" alt="ACBA" loading="lazy">
+        </figure>
+        <figure class="logo-card">
+          <img src="icons%20for%20jobs/client_agveran_ararat_resort.svg" alt="Aghveran Ararat Resort" loading="lazy">
+        </figure>
+        <figure class="logo-card">
+          <img src="icons%20for%20jobs/client_ameria_bank.svg" alt="Ameria Bank" loading="lazy">
+        </figure>
+        <figure class="logo-card">
+          <img src="icons%20for%20jobs/client_ararat.svg" alt="Ararat" loading="lazy">
+        </figure>
+        <figure class="logo-card">
+          <img src="icons%20for%20jobs/client_arloopa.svg" alt="Arloopa" loading="lazy">
+        </figure>
+        <figure class="logo-card">
+          <img src="icons%20for%20jobs/client_fire_mark.svg" alt="Fire Mark" loading="lazy">
+        </figure>
+        <figure class="logo-card">
+          <img src="icons%20for%20jobs/client_jarit.svg" alt="Jarit" loading="lazy">
+        </figure>
+        <figure class="logo-card">
+          <img src="icons%20for%20jobs/client_matenadaran.svg" alt="Matenadaran" loading="lazy">
+        </figure>
+        <figure class="logo-card">
+          <img src="icons%20for%20jobs/client_priston_univercity_logo_1.svg" alt="Priston University" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section projects reveal" id="projects">
+      <h2 class="section-title">Проекты</h2>
+      <div class="cards">
+        <article class="card project">
+          <a href="cases/lighteams.html" style="text-decoration:none; color:inherit; display:block;">
+            <div class="cover-wrap">
+              <img class="project-cover" src="cases/LighTeams/image_2_lighteams.png" alt="LighTeams — автоматизация бизнес‑процессов и HR" loading="lazy">
+            </div>
+            <div class="meta">
+              <h3>LighTeams — автоматизация бизнес‑процессов и HR</h3>
+              <p>Экосистема задач, проектного менеджмента и HR‑процессов. Веб + мобайл.</p>
+              <div class="tags"><span class="tag">Web</span><span class="tag">Mobile</span><span class="tag">HR</span></div>
+              <div class="result">Результат: сократили время постановки задач на 35%</div>
+              <div class="card-row"><span></span><span class="cta-icon">→</span></div>
+            </div>
+          </a>
+        </article>
+        <article class="card project">
+          <a href="cases/womansy.html" style="text-decoration:none; color:inherit; display:block;">
+            <div class="cover-wrap">
+              <img class="project-cover" src="cases/Womansy/18.jpg" alt="Wомansy — трекер женского здоровья" loading="lazy">
+            </div>
+            <div class="meta">
+              <h3>Womansy — трекер женского здоровья</h3>
+              <p>Отслеживание цикла, самочувствия, рекомендации. Стабильность и приватность.</p>
+              <div class="tags"><span class="tag">iOS</span><span class="tag">Android</span><span class="tag">Health</span></div>
+              <div class="result">Результат: DAU +18%, крэши −42%</div>
+              <div class="card-row"><span></span><span class="cta-icon">→</span></div>
+            </div>
+          </a>
+        </article>
+        <article class="card project">
+          <a href="cases/alfa.html" style="text-decoration:none; color:inherit; display:block;">
+            <div class="cover-wrap">
+              <img class="project-cover" src="assets/ph_bank.svg" alt="Alfa‑Bank v1.2 — обложка проекта" loading="lazy">
+            </div>
+            <div class="meta">
+              <h3>Alfa‑Bank — мобильное приложение, версия 1.2</h3>
+              <p>Принял участие в разработке релиза 1.2: экраны, навигация, оптимизация производительности и качество UI.</p>
+              <div class="tags"><span class="tag">React Native</span><span class="tag">iOS</span><span class="tag">Android</span></div>
+              <div class="result">Результат: выше стабильность, быстрее сценарии оплаты</div>
+              <div class="card-row"><span></span><span class="cta-icon">→</span></div>
+            </div>
+          </a>
+        </article>
+        <article class="card project">
+          <a href="cases/edo.html" style="text-decoration:none; color:inherit; display:block;">
+            <div class="cover-wrap">
+              <img class="project-cover" src="assets/ph_edo.svg" alt="Госуслуги ЭДО — обложка проекта" loading="lazy">
+            </div>
+            <div class="meta">
+              <h3>Госуслуги — электронный документооборот</h3>
+              <p>Модуль ЭДО: формирование и подписание документов, маршрутизация, статусы и уведомления.</p>
+              <div class="tags"><span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">EDO</span></div>
+              <div class="result">Результат: быстрее согласование, меньше ошибок при подписях</div>
+              <div class="card-row"><span></span><span class="cta-icon">→</span></div>
+            </div>
+          </a>
+        </article>
+        <article class="card project">
+          <img class="project-cover" src="assets/ph_arlo.svg" alt="ARLOOPA — AR платформа" loading="lazy">
+          <h3>ARLOOPA — AR платформа</h3>
+          <p>Сценарии AR‑взаимодействия, оптимизация 3D‑ассетов и плавные анимации. Рост удержания и вовлечённости пользователей.</p>
+          <div class="result">Результат: дольше сессии, выше вовлечённость</div>
+        </article>
+        <article class="card project">
+          <img class="project-cover" src="assets/ph_meta.svg" alt="Metaverse шоурум — WebGL/3D" loading="lazy">
+          <h3>Metaverse шоурум — WebGL/3D</h3>
+          <p>Интерактивный 3D‑шоурум с realtime‑освещением. Производительность и UX на мобильных и десктопах.</p>
+          <div class="result">Результат: 60 FPS на целевых устройствах</div>
+        </article>
+        <article class="card project">
+          <img class="project-cover" src="assets/ph_web.svg" alt="E‑commerce — high‑perf storefront" loading="lazy">
+          <h3>E‑commerce — high‑perf storefront</h3>
+          <p>Next.js + Edge кеширование, Core Web Vitals зелёная зона, конверсия выросла после ускорения страницы каталога.</p>
+          <div class="result">Результат: лучше конверсия после ускорения</div>
+        </article>
+        <article class="card project">
+          <img class="project-cover" src="assets/ph_game.svg" alt="Игровой проект — мобильная аркада" loading="lazy">
+          <h3>Мобильная аркада — игровая механика</h3>
+          <p>Имплементация кор‑лупа, экономик и событий. Телеметрия и A/B‑тесты для баланса.</p>
+          <div class="result">Результат: удержание на 7‑й день выросло</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section cta reveal" id="contact">
+      <div class="cta-wrap">
+        <h2>Готовы обсудить задачу</h2>
+        <p>Напишите пару строк — ответим в течение дня.</p>
+        <a class="button" href="mailto:hello@albnrt.dev">Связаться</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> GA‑DEV</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <button id="toTop" class="to-top" aria-label="Наверх">↑</button>
+</body>
+</html>
+
+

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#101522"/>
+      <stop offset="100%" stop-color="#0b0c0f"/>
+    </linearGradient>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#21d4fd"/>
+      <stop offset="100%" stop-color="#9b6bff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#g1)"/>
+  <rect x="120" y="90" width="560" height="220" rx="14" fill="#0f1218" stroke="#23293a"/>
+  <rect x="140" y="120" width="520" height="36" rx="8" fill="#131826"/>
+  <rect x="140" y="180" width="240" height="140" rx="10" fill="#121722" stroke="#23293a"/>
+  <rect x="400" y="180" width="260" height="60" rx="10" fill="#121722" stroke="#23293a"/>
+  <rect x="400" y="250" width="260" height="70" rx="10" fill="#121722" stroke="#23293a"/>
+  <path d="M140 150h200" stroke="url(#a)" stroke-width="6" stroke-linecap="round"/>
+  <text x="40" y="360" fill="#a0a3ad" font-family="Inter,system-ui" font-size="20">Web Storefront</text>
+</svg>
+

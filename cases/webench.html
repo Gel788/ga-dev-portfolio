@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WeBench — кейс</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <main class="container section case-layout">
+    <div class="case-body">
+      <a href="../index.html" class="case-back-btn">← На главную</a>
+      <h1 style="margin:0 0 12px">WeBench</h1>
+      <p class="subtitle" style="margin:0 20px 20px 0">Платформа для агрегирования и анализа бизнес-данных компаний Германии с системой бенчмарков</p>
+      <div class="case-meta">
+        <span class="meta-badge">Business Analytics</span>
+        <span class="meta-badge">Data Aggregation</span>
+        <span class="meta-badge">SaaS</span>
+      </div>
+      <article id="md" class="prose"></article>
+    </div>
+    <aside class="case-aside">
+      <div class="case-hero"><img src="../cases/WeBench/2.png" alt="WeBench Platform"></div>
+      <div class="gallery">
+        <img src="../cases/WeBench/3.png" alt="WeBench Analytics" data-lightbox>
+        <img src="../cases/WeBench/4.png" alt="WeBench Dashboard" data-lightbox>
+      </div>
+    </aside>
+  </main>
+  <div class="lightbox-backdrop" id="lb"><img alt="" id="lbimg"></div>
+  <script>
+    fetch('../cases/WeBench/описание.md').then(r => r.text()).then(t => { document.getElementById('md').innerHTML = marked.parse(t); });
+    document.addEventListener('click', (e)=>{ const img=e.target.closest('[data-lightbox]'); if(!img) return; const lb=document.getElementById('lb'); const lbimg=document.getElementById('lbimg'); lbimg.src=img.src; lb.classList.add('active'); });
+    document.getElementById('lb').addEventListener('click', ()=>{ document.getElementById('lb').classList.remove('active'); });
+  </script>
+</body>
+</html>

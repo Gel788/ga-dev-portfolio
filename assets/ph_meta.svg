@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#101522"/>
+      <stop offset="100%" stop-color="#0b0c0f"/>
+    </linearGradient>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9b6bff"/>
+      <stop offset="100%" stop-color="#21d4fd"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#g1)"/>
+  <rect x="180" y="90" width="440" height="220" rx="14" fill="#0f1218" stroke="#23293a"/>
+  <circle cx="400" cy="200" r="70" fill="none" stroke="url(#a)" stroke-width="8"/>
+  <circle cx="400" cy="200" r="30" fill="#121722" stroke="#23293a"/>
+  <text x="40" y="360" fill="#a0a3ad" font-family="Inter,system-ui" font-size="20">Metaverse Showroom</text>
+</svg>
+
