@@ -54,6 +54,10 @@ ${formData.auditDetails}` : ''}
 // Маршрут для отправки формы
 app.post('/submit-form', async (req, res) => {
     try {
+        console.log('Получен POST запрос на /submit-form');
+        console.log('Headers:', req.headers);
+        console.log('Body:', req.body);
+        
         const formData = req.body;
         
         // Валидация обязательных полей
@@ -67,12 +71,12 @@ app.post('/submit-form', async (req, res) => {
             }
         }
 
-        // Валидация Telegram никнейма
-        const telegramRegex = /^@?[a-zA-Z0-9_]{5,32}$/;
+        // Валидация Telegram никнейма (более мягкая)
+        const telegramRegex = /^@?[a-zA-Z0-9_]{3,32}$/;
         if (!telegramRegex.test(formData.telegram)) {
             return res.status(400).json({
                 success: false,
-                message: 'Некорректный формат Telegram никнейма'
+                message: 'Некорректный формат Telegram никнейма (должен содержать 3-32 символа, только буквы, цифры и подчеркивания)'
             });
         }
 
