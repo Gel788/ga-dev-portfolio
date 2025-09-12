@@ -629,6 +629,7 @@ function initContactForm() {
       }
       
       console.log('Отправляем данные:', data);
+      console.log('URL для отправки:', window.location.origin + '/submit-form');
       
       // Отправляем данные на сервер
       const response = await fetch('/submit-form', {
