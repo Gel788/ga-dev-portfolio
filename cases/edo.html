@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Госуслуги ЭДО — кейс | GA-DEV</title>
   <meta name="description" content="Разработка модуля электронного документооборота для Госуслуг: подписание, маршрутизация, статусы, уведомления">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles-optimized.css?v=2.7">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
@@ -117,7 +117,7 @@
 
   <script>
     // Load markdown content
-    fetch('EDO.md')
+    fetch('../cases/EDO.txt')
       .then(r => r.text())
       .then(t => { 
         document.getElementById('md').innerHTML = marked.parse(t); 

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alfa‑Bank 1.2 — кейс | GA-DEV</title>
   <meta name="description" content="Участие в разработке мобильного приложения Альфа-Банка версии 1.2: экраны, навигация, оптимизация производительности">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles-optimized.css?v=2.7">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
@@ -109,7 +109,7 @@
 
   <script>
     // Load markdown content
-    fetch('Alfa.md')
+    fetch('../cases/Alfa.txt')
       .then(r => r.text())
       .then(t => { 
         document.getElementById('md').innerHTML = marked.parse(t); 

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WeBench — кейс | GA-DEV</title>
   <meta name="description" content="Платформа для агрегирования и анализа бизнес-данных компаний Германии с системой бенчмарков">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles-optimized.css?v=2.7">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
@@ -44,6 +44,9 @@
         </div>
         
         <div class="case-hero-text">
+          <div class="case-logo">
+            <img src="../cases/WeBench/logo-webench.svg" alt="WeBench Logo" loading="eager">
+          </div>
           <h1 class="case-title">WeBench</h1>
           <p class="case-subtitle">Business Analytics Platform</p>
           <p class="case-description">Платформа для агрегирования и анализа бизнес-данных компаний Германии с системой бенчмарков</p>
@@ -118,7 +121,7 @@
 
   <script>
     // Load markdown content
-    fetch('../cases/WeBench/описание.md')
+    fetch('../cases/WeBench/описание.txt')
       .then(r => r.text())
       .then(t => { 
         document.getElementById('md').innerHTML = marked.parse(t); 

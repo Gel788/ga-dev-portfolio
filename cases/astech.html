@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Astech — кейс | GA-DEV</title>
   <meta name="description" content="Интегрированная облачная платформа для автомобильной диагностики с ИИ-анализом и микросервисной архитектурой">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles-optimized.css?v=2.7">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
@@ -44,6 +44,9 @@
         </div>
         
         <div class="case-hero-text">
+          <div class="case-logo">
+            <img src="../cases/ Astech/logo-astech.svg" alt="Astech Logo" loading="eager">
+          </div>
           <h1 class="case-title">Astech</h1>
           <p class="case-subtitle">Автомобильная диагностика</p>
           <p class="case-description">Интегрированная облачная платформа для автомобильной диагностики с ИИ-анализом и микросервисной архитектурой</p>
@@ -58,7 +61,7 @@
       </div>
       
       <div class="case-hero-image">
-        <img src="../cases/%20Astech/image_1.png" alt="Astech Platform" loading="lazy">
+        <img src="../cases/Astech/image_1.png" alt="Astech Platform" loading="lazy">
       </div>
     </section>
 
@@ -99,8 +102,8 @@
           <div class="case-gallery-card">
             <h3>Галерея</h3>
             <div class="case-gallery">
-              <img src="../cases/%20Astech/image_2.png" alt="Astech Dashboard" data-lightbox>
-              <img src="../cases/%20Astech/image_3.png" alt="Astech Mobile App" data-lightbox>
+              <img src="../cases/Astech/image_2.png" alt="Astech Dashboard" data-lightbox>
+              <img src="../cases/Astech/image_3.png" alt="Astech Mobile App" data-lightbox>
             </div>
           </div>
         </aside>
@@ -118,10 +121,19 @@
 
   <script>
     // Load markdown content
-    fetch('../cases/%20Astech/описание.md')
-      .then(r => r.text())
+    fetch('../cases/Astech/описание.txt')
+      .then(r => {
+        if (!r.ok) {
+          throw new Error('Failed to load markdown file');
+        }
+        return r.text();
+      })
       .then(t => { 
         document.getElementById('md').innerHTML = marked.parse(t); 
+      })
+      .catch(error => {
+        console.warn('Could not load markdown content:', error);
+        document.getElementById('md').innerHTML = '<p>Содержимое временно недоступно.</p>';
       });
     
     // Lightbox functionality

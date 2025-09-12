@@ -1,7 +1,23 @@
 // Modern Premium Website JavaScript
 // Smooth scrolling and navigation interactions
 
+console.log('GA-DEV Script loaded successfully');
+
+// Add error handling for the entire script
+window.addEventListener('error', function(e) {
+  console.warn('GA-DEV Script Error:', e.error);
+});
+
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM Content Loaded - Initializing GA-DEV features');
+  
+  // Check if projects section exists
+  const projectsSection = document.querySelector('.projects-section');
+  if (projectsSection) {
+    console.log('Projects section found:', projectsSection);
+  } else {
+    console.warn('Projects section not found!');
+  }
   
   // Mobile Navigation Toggle
   const navbarToggle = document.getElementById('navbar-toggle');

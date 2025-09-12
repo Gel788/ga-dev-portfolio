@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LighTeams — кейс | GA-DEV</title>
   <meta name="description" content="Платформа для автоматизации бизнес‑процессов и HR-управления">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles-optimized.css?v=2.7">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
@@ -44,6 +44,9 @@
         </div>
         
         <div class="case-hero-text">
+          <div class="case-logo">
+            <img src="../cases/LighTeams/logo-lighteams.svg" alt="LighTeams Logo" loading="eager">
+          </div>
           <h1 class="case-title">LighTeams</h1>
           <p class="case-subtitle">Автоматизация бизнес-процессов</p>
           <p class="case-description">Платформа для автоматизации бизнес‑процессов и HR-управления</p>
@@ -119,10 +122,19 @@
 
   <script>
     // Load markdown content
-    fetch('LighTeams/LighTeams.md')
-      .then(r => r.text())
+    fetch('../cases/LighTeams/content.php')
+      .then(r => {
+        if (!r.ok) {
+          throw new Error('Failed to load markdown file');
+        }
+        return r.text();
+      })
       .then(t => { 
         document.getElementById('md').innerHTML = marked.parse(t); 
+      })
+      .catch(error => {
+        console.warn('Could not load markdown content:', error);
+        document.getElementById('md').innerHTML = '<p>Содержимое временно недоступно.</p>';
       });
     
     // Lightbox functionality
