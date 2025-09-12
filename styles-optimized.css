@@ -2166,7 +2166,6 @@ body {
   .navbar-toggle {
     display: flex;
   }
-  }
   
   .hero-cta {
     flex-direction: row;
@@ -2551,7 +2550,6 @@ body {
     flex-direction: column;
     align-items: center;
   }
-}
   
   .form-input,
   .form-select,
