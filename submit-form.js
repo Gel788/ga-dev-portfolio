@@ -13,6 +13,7 @@ const CHAT_ID = '143323192'; // Ваш реальный Chat ID
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static('.')); // Обслуживание статических файлов
 
 // Функция для отправки сообщения в Telegram
 async function sendToTelegram(formData) {
