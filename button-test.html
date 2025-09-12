@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест кнопки - GA-DEV</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #0a0a0b;
+      color: white;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 5px;
+      background: #1a1a1b;
+      color: white;
+      font-size: 16px;
+    }
+    button {
+      background: #ff6b35;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background: #e55a2b;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 5px;
+      display: none;
+    }
+    .success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    .debug {
+      margin-top: 20px;
+      padding: 15px;
+      background: #1a1a1b;
+      border-radius: 5px;
+      font-family: monospace;
+      font-size: 12px;
+      color: #888;
+      white-space: pre-wrap;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Тест кнопки отправки</h1>
+  
+  <form id="testForm">
+    <div class="form-group">
+      <label for="name">Имя *</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="telegram">Telegram *</label>
+      <input type="text" id="telegram" name="telegram" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="projectType">Тип проекта *</label>
+      <select id="projectType" name="projectType" required>
+        <option value="">Выберите тип проекта</option>
+        <option value="web">Веб-сайт</option>
+        <option value="mobile">Мобильное приложение</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="message">Сообщение *</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+    </div>
+    
+    <button type="submit" id="submitBtn">Отправить заявку</button>
+  </form>
+  
+  <div id="result" class="result"></div>
+  <div id="debug" class="debug"></div>
+
+  <script>
+    let debugLog = [];
+    
+    function log(message) {
+      const timestamp = new Date().toLocaleTimeString();
+      const logMessage = `[${timestamp}] ${message}`;
+      debugLog.push(logMessage);
+      console.log(logMessage);
+      
+      const debugDiv = document.getElementById('debug');
+      debugDiv.textContent = debugLog.join('\n');
+      debugDiv.scrollTop = debugDiv.scrollHeight;
+    }
+    
+    log('Page loaded');
+    
+    const form = document.getElementById('testForm');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    log('Form found: ' + (form ? 'YES' : 'NO'));
+    log('Submit button found: ' + (submitBtn ? 'YES' : 'NO'));
+    
+    // Test button click
+    submitBtn.addEventListener('click', (e) => {
+      log('Button clicked!');
+      e.preventDefault();
+      log('Prevented default');
+    });
+    
+    // Test form submit
+    form.addEventListener('submit', (e) => {
+      log('Form submit event triggered!');
+      e.preventDefault();
+      log('Prevented default in form submit');
+      
+      // Show success message
+      const resultDiv = document.getElementById('result');
+      resultDiv.className = 'result success';
+      resultDiv.textContent = '✅ Кнопка работает! Форма отправлена.';
+      resultDiv.style.display = 'block';
+    });
+    
+    // Test if button is clickable
+    submitBtn.addEventListener('mousedown', () => {
+      log('Button mousedown');
+    });
+    
+    submitBtn.addEventListener('mouseup', () => {
+      log('Button mouseup');
+    });
+    
+    // Test touch events
+    submitBtn.addEventListener('touchstart', () => {
+      log('Button touchstart');
+    });
+    
+    submitBtn.addEventListener('touchend', () => {
+      log('Button touchend');
+    });
+    
+    log('Event listeners added');
+  </script>
+</body>
+</html>

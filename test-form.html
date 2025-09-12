@@ -1,86 +1,144 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тест формы</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; }
-        input, textarea, select { width: 100%; padding: 8px; margin-bottom: 10px; }
-        button { background: #007bff; color: white; padding: 10px 20px; border: none; cursor: pointer; }
-        .error { color: red; margin-top: 10px; }
-        .success { color: green; margin-top: 10px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест формы - GA-DEV</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button {
+      background: #ff6b35;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #e55a2b;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 5px;
+      display: none;
+    }
+    .success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+  </style>
 </head>
 <body>
-    <h1>Тест отправки формы</h1>
+  <h1>Тест формы GA-DEV</h1>
+  
+  <form id="testForm">
+    <div class="form-group">
+      <label for="name">Имя *</label>
+      <input type="text" id="name" name="name" required>
+    </div>
     
-    <form id="testForm">
-        <div class="form-group">
-            <label for="name">Имя *</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="telegram">Telegram *</label>
-            <input type="text" id="telegram" name="telegram" placeholder="@username" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="projectType">Тип проекта *</label>
-            <select id="projectType" name="projectType" required>
-                <option value="">Выберите тип проекта</option>
-                <option value="web">Веб-сайт</option>
-                <option value="mobile">Мобильное приложение</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="message">Сообщение *</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-        </div>
-        
-        <button type="submit">Отправить тест</button>
-    </form>
+    <div class="form-group">
+      <label for="telegram">Telegram *</label>
+      <input type="text" id="telegram" name="telegram" required>
+    </div>
     
-    <div id="result"></div>
+    <div class="form-group">
+      <label for="projectType">Тип проекта *</label>
+      <select id="projectType" name="projectType" required>
+        <option value="">Выберите тип проекта</option>
+        <option value="web">Веб-сайт</option>
+        <option value="mobile">Мобильное приложение</option>
+        <option value="ecommerce">Интернет-магазин</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="message">Сообщение *</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+    </div>
+    
+    <button type="submit">Отправить тест</button>
+  </form>
+  
+  <div id="result" class="result"></div>
 
-    <script>
-        document.getElementById('testForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(e.target);
-            const data = {};
-            
-            for (let [key, value] of formData.entries()) {
-                data[key] = value;
-            }
-            
-            const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = 'Отправка...';
-            
-            try {
-                const response = await fetch('submit-form.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    resultDiv.innerHTML = '<div class="success">✅ ' + result.message + '</div>';
-                } else {
-                    resultDiv.innerHTML = '<div class="error">❌ ' + result.message + '</div>';
-                }
-            } catch (error) {
-                resultDiv.innerHTML = '<div class="error">❌ Ошибка: ' + error.message + '</div>';
-            }
+  <script>
+    document.getElementById('testForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(e.target);
+      const data = {};
+      
+      for (let [key, value] of formData.entries()) {
+        data[key] = value;
+      }
+      
+      console.log('Отправляем данные:', data);
+      
+      try {
+        const response = await fetch('submit-form.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
         });
-    </script>
+        
+        console.log('Response status:', response.status);
+        console.log('Response ok:', response.ok);
+        
+        const result = await response.json();
+        console.log('Response data:', result);
+        
+        const resultDiv = document.getElementById('result');
+        
+        if (result.success) {
+          resultDiv.className = 'result success';
+          resultDiv.textContent = '✅ ' + result.message;
+        } else {
+          resultDiv.className = 'result error';
+          resultDiv.textContent = '❌ ' + result.message;
+        }
+        
+        resultDiv.style.display = 'block';
+        
+      } catch (error) {
+        console.error('Error:', error);
+        const resultDiv = document.getElementById('result');
+        resultDiv.className = 'result error';
+        resultDiv.textContent = '❌ Ошибка: ' + error.message;
+        resultDiv.style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>

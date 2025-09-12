@@ -4085,4 +4085,111 @@ p, span, div, li, a {
   }
 }
 
+/* FAQ Section */
+.faq-section {
+  padding: 120px 0;
+  background: linear-gradient(135deg, #0a0a0b 0%, #1a1a1b 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(120, 119, 198, 0.05) 0%, rgba(255, 119, 198, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.faq-item:hover::before {
+  opacity: 1;
+}
+
+.faq-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(120, 119, 198, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.faq-question {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+.faq-answer {
+  position: relative;
+  z-index: 1;
+}
+
+.faq-answer p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin: 0;
+  font-size: var(--font-size-base);
+}
+
+/* FAQ Responsive */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 80px 0;
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 40px;
+  }
+  
+  .faq-item {
+    padding: 24px;
+  }
+  
+  .faq-question {
+    font-size: var(--font-size-base);
+  }
+  
+  .faq-answer p {
+    font-size: var(--font-size-sm);
+  }
+}
+
 

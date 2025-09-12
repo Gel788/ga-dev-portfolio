@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $input = json_decode(file_get_contents('php://input'), true);
 
 // Валидация обязательных полей
-$required_fields = ['name', 'telegram', 'projectType', 'message'];
+$required_fields = ['name', 'telegram', 'phone', 'company', 'projectType', 'budget', 'timeline', 'message'];
 foreach ($required_fields as $field) {
     if (empty($input[$field])) {
         http_response_code(400);

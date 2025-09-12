@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Страница не найдена | GA-DEV</title>
+  <meta name="description" content="Страница не найдена. Возможно, она ушла в отпуск на Мальдивы! 😎">
+  <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="404 - Страница не найдена | GA-DEV">
+  <meta property="og:description" content="Страница не найдена. Возможно, она ушла в отпуск на Мальдивы! 😎">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ga-dev.ru/404.html">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles-optimized.css?v=15.0">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "404 - Страница не найдена | GA-DEV",
+    "url": "https://ga-dev.ru/404.html",
+    "description": "Страница не найдена. Возможно, она ушла в отпуск на Мальдивы! 😎",
+    "publisher": {
+      "@type": "Organization",
+      "name": "GA-DEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ga-dev.ru/favicon.svg"
+      }
+    },
+    "datePublished": "2025-01-15",
+    "dateModified": "2025-01-15",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "404 Error Page",
+      "description": "Custom 404 error page with interactive elements and fun facts"
+    }
+  }
+  </script>
+  
+  <!-- Additional Meta Tags -->
+  <meta name="author" content="GA-DEV">
+  <meta name="generator" content="GA-DEV Custom 404 Page">
+  <meta name="revisit-after" content="1 year">
+  <meta name="rating" content="general">
+  <meta name="distribution" content="global">
+  <meta name="language" content="ru">
+  <meta name="geo.region" content="RU-MOW">
+  <meta name="geo.placename" content="Москва">
+  <meta name="geo.position" content="55.7558;37.6176">
+  <meta name="ICBM" content="55.7558, 37.6176">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="404 - Страница не найдена | GA-DEV">
+  <meta name="twitter:description" content="Страница не найдена. Возможно, она ушла в отпуск на Мальдивы! 😎">
+  <meta name="twitter:image" content="https://ga-dev.ru/favicon.svg">
+  
+  <!-- Additional Open Graph -->
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="GA-DEV 404 Error Page">
+  <meta property="og:site_name" content="GA-DEV">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="article:author" content="GA-DEV">
+  <meta property="article:publisher" content="https://ga-dev.ru">
+  
+  <style>
+    /* 404 Page Specific Styles */
+    .error-page {
+      min-height: 100vh;
+      background: var(--bg-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-2xl);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .error-page::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(247, 147, 30, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 140, 66, 0.15) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 30%, rgba(255, 107, 53, 0.05) 50%, transparent 70%);
+      animation: backgroundPulse 8s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+    
+    .error-page::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 60% 20%, rgba(255, 140, 66, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 30% 70%, rgba(247, 147, 30, 0.1) 0%, transparent 40%);
+      animation: backgroundFloat 12s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+    
+    @keyframes backgroundPulse {
+      0% { opacity: 0.3; }
+      100% { opacity: 0.7; }
+    }
+    
+    @keyframes backgroundFloat {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-20px) rotate(2deg); }
+    }
+    
+    .error-container {
+      max-width: 800px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      background: var(--bg-glass);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-primary);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-4xl);
+      box-shadow: var(--shadow-xl);
+      animation: containerFloat 6s ease-in-out infinite;
+    }
+    
+    @keyframes containerFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(0.5deg); }
+    }
+    
+    .error-number {
+      font-size: 8rem;
+      font-weight: 800;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: var(--space-lg);
+      animation: numberGlow 3s ease-in-out infinite alternate;
+      text-shadow: 0 0 30px var(--accent-glow);
+    }
+    
+    @keyframes numberGlow {
+      0% { 
+        filter: drop-shadow(0 0 20px var(--accent-glow));
+      }
+      100% { 
+        filter: drop-shadow(0 0 40px var(--accent-glow-strong));
+      }
+    }
+    
+    .error-emoji {
+      font-size: 4rem;
+      margin-bottom: var(--space-xl);
+      animation: emojiBounce 2s ease-in-out infinite;
+      filter: drop-shadow(0 0 20px var(--accent-glow));
+    }
+    
+    @keyframes emojiBounce {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-15px) rotate(-5deg); }
+      75% { transform: translateY(-8px) rotate(5deg); }
+    }
+    
+    .error-title {
+      font-size: var(--font-size-4xl);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--space-lg);
+      line-height: 1.2;
+    }
+    
+    .derzky-message {
+      background: var(--accent-gradient);
+      color: white;
+      padding: var(--space-xl);
+      border-radius: var(--radius-xl);
+      margin: var(--space-2xl) 0;
+      font-size: var(--font-size-xl);
+      font-weight: 600;
+      box-shadow: var(--shadow-accent);
+      animation: messagePulse 2s ease-in-out infinite alternate;
+      border: 1px solid var(--border-accent);
+    }
+    
+    @keyframes messagePulse {
+      0% { 
+        box-shadow: var(--shadow-accent);
+        transform: scale(1);
+      }
+      100% { 
+        box-shadow: var(--shadow-glow);
+        transform: scale(1.02);
+      }
+    }
+    
+    .error-subtitle {
+      font-size: var(--font-size-lg);
+      color: var(--text-tertiary);
+      line-height: 1.6;
+      margin-bottom: var(--space-2xl);
+    }
+    
+    .error-actions {
+      display: flex;
+      gap: var(--space-lg);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: var(--space-2xl);
+    }
+    
+    .error-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-lg) var(--space-2xl);
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      font-size: var(--font-size-base);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid transparent;
+    }
+    
+    .error-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .error-btn:hover::before {
+      left: 100%;
+    }
+    
+    .error-btn-primary {
+      background: var(--accent-gradient);
+      color: white;
+      border-color: var(--accent-primary);
+    }
+    
+    .error-btn-primary:hover {
+      background: var(--accent-gradient-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-accent);
+    }
+    
+    .error-btn-secondary {
+      background: var(--bg-glass);
+      color: var(--text-primary);
+      border-color: var(--border-secondary);
+    }
+    
+    .error-btn-secondary:hover {
+      background: var(--bg-glass-hover);
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+    
+    .fun-facts {
+      margin-top: var(--space-3xl);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-lg);
+    }
+    
+    .fun-fact {
+      background: var(--bg-glass);
+      backdrop-filter: blur(10px);
+      padding: var(--space-xl);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-primary);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .fun-fact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--accent-gradient);
+    }
+    
+    .fun-fact:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--border-accent);
+    }
+    
+    .fun-fact-icon {
+      font-size: 2rem;
+      animation: iconSpin 4s linear infinite;
+      flex-shrink: 0;
+    }
+    
+    @keyframes iconSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .fun-fact-text {
+      font-size: var(--font-size-sm);
+      line-height: 1.5;
+      color: var(--text-tertiary);
+    }
+    
+    .click-counter {
+      position: fixed;
+      top: var(--space-2xl);
+      right: var(--space-2xl);
+      background: var(--bg-glass);
+      backdrop-filter: blur(10px);
+      padding: var(--space-md) var(--space-lg);
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      color: var(--text-primary);
+      border: 1px solid var(--border-primary);
+      box-shadow: var(--shadow-md);
+      z-index: 1000;
+      animation: counterPulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes counterPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .error-page {
+        padding: var(--space-lg);
+      }
+      
+      .error-container {
+        padding: var(--space-2xl);
+      }
+      
+      .error-number {
+        font-size: 6rem;
+      }
+      
+      .error-title {
+        font-size: var(--font-size-3xl);
+      }
+      
+      .derzky-message {
+        font-size: var(--font-size-lg);
+        padding: var(--space-lg);
+      }
+      
+      .error-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .error-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+      
+      .fun-facts {
+        grid-template-columns: 1fr;
+      }
+      
+      .click-counter {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: var(--space-lg) auto;
+        display: inline-block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Hidden SEO Content -->
+  <div style="display: none;">
+    <h1>404 Ошибка - Страница не найдена</h1>
+    <h2>GA-DEV - Премиум студия разработки</h2>
+    <h3>Заказ сайтов и мобильных приложений в Москве</h3>
+    <p>Страница не найдена. Возможно, она ушла в отпуск на Мальдивы! Мы создаем премиальные сайты и мобильные приложения с упором на архитектуру, перформанс и безупречный UX.</p>
+    <p>Ключевые слова: 404 ошибка, страница не найдена, GA-DEV, разработка сайтов, мобильные приложения, Москва, премиум студия, веб-разработка, IT-аудит, автоматизация, e-commerce, разработка под ключ.</p>
+    <ul>
+      <li>Заказ сайтов в Москве</li>
+      <li>Заказ мобильных приложений в Москве</li>
+      <li>Разработка сайтов Россия</li>
+      <li>Создание мобильных приложений Россия</li>
+      <li>Веб-разработка Москва</li>
+      <li>IT-аудит</li>
+      <li>Автоматизация</li>
+      <li>E-commerce</li>
+      <li>Разработка под ключ</li>
+      <li>Создание сайтов под ключ Москва</li>
+      <li>Веб-разработка Россия</li>
+      <li>Мобильные приложения Россия</li>
+      <li>Разработка сайтов Москва цена</li>
+      <li>Создание мобильных приложений Россия цена</li>
+    </ul>
+  </div>
+  
+  <div class="error-page">
+    <div class="error-container">
+      <div class="error-number">404</div>
+      <div class="error-emoji">🤡</div>
+      <h1 class="error-title">Страница не найдена</h1>
+      
+      <div class="derzky-message">
+        Ой! Страница решила, что она слишком крутая для вас! 😎
+      </div>
+      
+      <p class="error-subtitle">
+        Эта страница решила, что она слишком крутая для вас и ушла в отпуск на Мальдивы. 
+        А мы тут сидим и думаем: "А что, мы тоже хотим на Мальдивы!" 😎<br><br>
+        <strong>P.S.</strong> Пока вы тут кликаете, наши конкуренты уже обанкротились от зависти! 💸
+      </p>
+      
+      <div class="error-actions">
+        <a href="/" class="error-btn error-btn-primary">
+          <span>🏠</span>
+          <span>На главную</span>
+        </a>
+        <a href="/target-audience.html" class="error-btn error-btn-secondary">
+          <span>🎯</span>
+          <span>Кому мы полезны</span>
+        </a>
+      </div>
+      
+      <div class="fun-facts">
+        <div class="fun-fact">
+          <span class="fun-fact-icon">🚀</span>
+          <span class="fun-fact-text">Наши разработчики кодируют быстрее, чем вы читаете этот текст</span>
+        </div>
+        <div class="fun-fact">
+          <span class="fun-fact-icon">💀</span>
+          <span class="fun-fact-text">Эта ошибка 404 старше твоего опыта в программировании</span>
+        </div>
+        <div class="fun-fact">
+          <span class="fun-fact-icon">🔥</span>
+          <span class="fun-fact-text">Наши разработчики кодируют быстрее, чем ты думаешь!</span>
+        </div>
+        <div class="fun-fact">
+          <span class="fun-fact-icon">🧠</span>
+          <span class="fun-fact-text">Эта ошибка 404 умнее твоего первого сайта!</span>
+        </div>
+        <div class="fun-fact">
+          <span class="fun-fact-icon">⚡</span>
+          <span class="fun-fact-text">Пока ты тут, мы уже заработали на твоих ошибках!</span>
+        </div>
+        <div class="fun-fact">
+          <span class="fun-fact-icon">🎯</span>
+          <span class="fun-fact-text">Эта страница стала ниндзя и исчезла в тени интернета!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="click-counter" id="clickCounter">Кликов: 0</div>
+  
+  <script>
+    let clickCount = 0;
+    const clickCounter = document.getElementById('clickCounter');
+    
+    document.addEventListener('click', () => {
+      clickCount++;
+      clickCounter.textContent = `Кликов: ${clickCount}`;
+      
+      // Специальные сообщения при определенном количестве кликов
+      if (clickCount === 50) {
+        clickCounter.textContent = 'Кликов: 50 - Вы на полпути к безумию! 🎯';
+        setTimeout(() => {
+          clickCounter.textContent = `Кликов: ${clickCount}`;
+        }, 3000);
+      } else if (clickCount === 100) {
+        clickCounter.textContent = 'Кликов: 100 - Вы легенда кликов! 🏆';
+        setTimeout(() => {
+          clickCounter.textContent = `Кликов: ${clickCount}`;
+        }, 3000);
+      } else if (clickCount === 500) {
+        clickCounter.textContent = 'Кликов: 500 - Вы бог кликов! 👑';
+        setTimeout(() => {
+          clickCounter.textContent = `Кликов: ${clickCount}`;
+        }, 3000);
+      } else if (clickCount === 1000) {
+        clickCounter.textContent = 'Кликов: 1000 - Вы легенда кликов! 🏆';
+        setTimeout(() => {
+          clickCounter.textContent = `Кликов: ${clickCount}`;
+        }, 3000);
+      }
+    });
+  </script>
+</body>
+</html>

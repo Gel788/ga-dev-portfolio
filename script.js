@@ -19,6 +19,30 @@ document.addEventListener('DOMContentLoaded', function() {
     console.warn('Projects section not found!');
   }
   
+  // Initialize contact form with delay to ensure DOM is ready
+  setTimeout(() => {
+    console.log('Initializing contact form...');
+    initContactForm();
+  }, 100);
+  
+  // Detect mobile device
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  console.log('Mobile device detected:', isMobile);
+  
+  // Additional mobile-specific initialization
+  if (isMobile) {
+    console.log('Initializing mobile-specific features');
+    
+    // Ensure form is properly initialized on mobile
+    setTimeout(() => {
+      const form = document.getElementById('contactForm');
+      if (form) {
+        console.log('Re-initializing form for mobile');
+        initContactForm();
+      }
+    }, 2000);
+  }
+  
   // Mobile Navigation Toggle
   const navbarToggle = document.getElementById('navbar-toggle');
   const navbarMenu = document.getElementById('navbar-menu');
@@ -72,18 +96,16 @@ document.addEventListener('DOMContentLoaded', function() {
   
   window.addEventListener('scroll', updateActiveLink);
   
-  // Navigation scroll effect and progress indicator
+  // Enhanced Navigation scroll effect and progress indicator
   const nav = document.querySelector('.navbar');
   const progressBar = document.getElementById('scrollProgress');
   
   function handleScroll() {
-    // Navigation background
+    // Enhanced Navigation background with class toggle
     if (window.scrollY > 50) {
-      nav.style.background = 'rgba(0, 0, 0, 0.95)';
-      nav.style.backdropFilter = 'blur(25px)';
+      nav.classList.add('scrolled');
     } else {
-      nav.style.background = 'rgba(0, 0, 0, 0.85)';
-      nav.style.backdropFilter = 'blur(20px)';
+      nav.classList.remove('scrolled');
     }
     
     // Progress indicator
@@ -144,27 +166,31 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // Intersection Observer for scroll animations
+  // Enhanced Intersection Observer for scroll animations
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
   };
   
   const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
+        // Staggered animation delay
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0) scale(1)';
+          entry.target.classList.add('animate-in');
+        }, index * 100);
       }
     });
   }, observerOptions);
   
-  // Observe elements for scroll animations
-  const animateOnScroll = document.querySelectorAll('.project-card, .feature, .stat-card');
+  // Observe elements for scroll animations with enhanced effects
+  const animateOnScroll = document.querySelectorAll('.project-card, .feature, .stat-card, .service-card, .stack-category, .why-card');
   animateOnScroll.forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    el.style.transform = 'translateY(30px) scale(0.95)';
+    el.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
     observer.observe(el);
   });
   
@@ -195,8 +221,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Project cards 3D tilt effect
-  document.querySelectorAll('.project-card').forEach(card => {
+  // Enhanced 3D tilt effect for cards
+  document.querySelectorAll('.project-card, .service-card, .stack-category').forEach(card => {
     card.addEventListener('mousemove', function(e) {
       if (window.innerWidth > 768) {
         const rect = this.getBoundingClientRect();
@@ -206,17 +232,103 @@ document.addEventListener('DOMContentLoaded', function() {
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
         
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
+        const rotateX = (y - centerY) / 15;
+        const rotateY = (centerX - x) / 15;
         
-        this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
+        // Enhanced 3D transform with better perspective
+        this.style.transform = `
+          perspective(1200px) 
+          rotateX(${rotateX}deg) 
+          rotateY(${rotateY}deg) 
+          translateY(-12px) 
+          scale(1.02)
+          translateZ(20px)
+        `;
+        
+        // Add subtle glow effect
+        this.style.filter = 'brightness(1.05) saturate(1.1)';
       }
     });
     
     card.addEventListener('mouseleave', function() {
-      this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)';
+      this.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1) translateZ(0)';
+      this.style.filter = 'brightness(1) saturate(1)';
     });
   });
+
+  // Counter animation for statistics
+  function animateCounter(element, target, duration = 2000) {
+    if (!element || !target) return;
+    
+    const start = 0;
+    const increment = target / (duration / 16);
+    let current = start;
+    
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      element.textContent = Math.floor(current);
+    }, 16);
+  }
+
+  // Enhanced Intersection Observer for counter animation
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = parseInt(counter.getAttribute('data-count'));
+        
+        if (target && !counter.classList.contains('animated')) {
+          counter.classList.add('animated');
+          animateCounter(counter, target);
+          counterObserver.unobserve(counter);
+        }
+      }
+    });
+  }, { 
+    threshold: 0.3,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  // Initialize counter animation when DOM is ready
+  function initCounters() {
+    const counters = document.querySelectorAll('.stat-number[data-count]');
+    console.log('Found counters:', counters.length);
+    
+    counters.forEach((counter, index) => {
+      console.log(`Counter ${index}:`, counter, 'data-count:', counter.getAttribute('data-count'));
+      counterObserver.observe(counter);
+    });
+  }
+
+  // Initialize counters immediately and on DOM ready
+  initCounters();
+  
+  // Also initialize on window load as backup
+  window.addEventListener('load', initCounters);
+  
+  // Alternative counter animation for mobile devices
+  function checkCountersOnScroll() {
+    const counters = document.querySelectorAll('.stat-number[data-count]:not(.animated)');
+    counters.forEach(counter => {
+      const rect = counter.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      
+      if (isVisible) {
+        const target = parseInt(counter.getAttribute('data-count'));
+        if (target) {
+          counter.classList.add('animated');
+          animateCounter(counter, target);
+        }
+      }
+    });
+  }
+  
+  // Add scroll listener for mobile devices
+  window.addEventListener('scroll', checkCountersOnScroll);
   
   // Performance optimization: throttle scroll events
   let ticking = false;
@@ -349,10 +461,29 @@ initCursorTrail();
 // Contact Form Handling
 function initContactForm() {
   const form = document.getElementById('contactForm');
+  
+  if (!form) {
+    console.warn('Contact form not found');
+    return;
+  }
+  
   const submitBtn = form.querySelector('.form-submit');
   const successMessage = document.getElementById('formSuccess');
   
-  if (!form) return;
+  if (!submitBtn) {
+    console.warn('Submit button not found');
+    return;
+  }
+  
+  if (!successMessage) {
+    console.warn('Success message element not found');
+    return;
+  }
+  
+  console.log('Contact form initialized successfully');
+  console.log('Form element:', form);
+  console.log('Submit button:', submitBtn);
+  console.log('Success message:', successMessage);
   
   // Form validation
   function validateField(field) {
@@ -421,32 +552,67 @@ function initContactForm() {
   
   projectTypeSelect.addEventListener('change', toggleAuditDetails);
 
-  // Real-time validation
-  const inputs = form.querySelectorAll('input, select, textarea');
-  inputs.forEach(input => {
-    input.addEventListener('blur', () => validateField(input));
+  // Real-time validation - only validate visible inputs
+  const inputs = form.querySelectorAll('input:not([style*="display: none"]), select:not([style*="display: none"]), textarea:not([style*="display: none"])');
+  console.log(`Found ${inputs.length} visible form inputs`);
+  
+  inputs.forEach((input, index) => {
+    console.log(`Setting up validation for input ${index + 1}: ${input.name || input.id}`);
+    
+    input.addEventListener('blur', () => {
+      console.log(`Input ${input.name || input.id} lost focus, validating...`);
+      validateField(input);
+    });
+    
     input.addEventListener('input', () => {
       if (input.style.borderColor === 'rgb(239, 68, 68)') {
+        console.log(`Input ${input.name || input.id} has error, re-validating...`);
         validateField(input);
       }
+    });
+    
+    // Add touch events for mobile
+    input.addEventListener('touchstart', () => {
+      console.log(`Input ${input.name || input.id} touch start`);
+    });
+    
+    input.addEventListener('touchend', () => {
+      console.log(`Input ${input.name || input.id} touch end`);
     });
   });
   
   // Form submission
+  console.log('Adding submit event listener to form');
+  
+  // Add click handler to submit button as backup
+  submitBtn.addEventListener('click', (e) => {
+    console.log('Submit button clicked');
+    e.preventDefault();
+    form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+  });
+  
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    e.stopPropagation();
     
-    // Validate all fields
+    console.log('Form submit event triggered');
+    
+    // Validate all visible fields
     let isFormValid = true;
-    inputs.forEach(input => {
+    const visibleInputs = form.querySelectorAll('input:not([style*="display: none"]), select:not([style*="display: none"]), textarea:not([style*="display: none"])');
+    
+    visibleInputs.forEach(input => {
       if (!validateField(input)) {
         isFormValid = false;
       }
     });
     
     if (!isFormValid) {
+      console.log('Form validation failed');
       return;
     }
+    
+    console.log('Form validation passed, submitting...');
     
     // Show loading state
     submitBtn.classList.add('loading');
@@ -462,6 +628,8 @@ function initContactForm() {
         data[key] = value;
       }
       
+      console.log('Отправляем данные:', data);
+      
       // Отправляем данные на сервер
       const response = await fetch('submit-form.php', {
         method: 'POST',
@@ -471,7 +639,15 @@ function initContactForm() {
         body: JSON.stringify(data)
       });
       
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP Error: ${response.status}`);
+      }
+      
       const result = await response.json();
+      console.log('Response data:', result);
       
       if (result.success) {
         // Show success message
@@ -486,6 +662,8 @@ function initContactForm() {
         if (auditDetailsGroup) {
           auditDetailsGroup.style.display = 'none';
         }
+        
+        console.log('Форма успешно отправлена!');
       } else {
         throw new Error(result.message || 'Ошибка отправки формы');
       }
@@ -568,10 +746,7 @@ function resetForm() {
   }
 }
 
-// Initialize contact form when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  initContactForm();
-});
+// Contact form is already initialized in the main DOMContentLoaded event
 
 // Enhanced markdown parser for detailed case studies
 function parseMarkdown(markdown) {
