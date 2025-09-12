@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alfa‑Bank 1.2 — кейс | GA-DEV</title>
   <meta name="description" content="Участие в разработке мобильного приложения Альфа-Банка версии 1.2: экраны, навигация, оптимизация производительности">
-  <link rel="stylesheet" href="../styles-optimized.css?v=2.7">
+  <link rel="stylesheet" href="../styles-optimized.css?v=2.8">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
@@ -17,7 +17,7 @@
         <span class="brand-subtitle">Development</span>
       </div>
       
-      <div class="navbar-menu">
+      <div class="navbar-menu" id="navbar-menu">
         <a href="../index.html" class="navbar-link">
           <span class="link-icon">🏠</span>
           <span class="link-text">Главная</span>
@@ -27,6 +27,12 @@
           <span class="link-text">Проекты</span>
         </a>
       </div>
+      
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+      </button>
     </div>
   </nav>
 
@@ -130,6 +136,35 @@
         document.getElementById('lb').classList.remove('active');
       }
     });
+    
+    // Mobile Navigation Toggle
+    const navbarToggle = document.getElementById('navbar-toggle');
+    const navbarMenu = document.getElementById('navbar-menu');
+    
+    if (navbarToggle && navbarMenu) {
+      navbarToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        navbarToggle.classList.toggle('active');
+        navbarMenu.classList.toggle('active');
+      });
+      
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.navbar-link').forEach(link => {
+        link.addEventListener('click', function() {
+          navbarToggle.classList.remove('active');
+          navbarMenu.classList.remove('active');
+        });
+      });
+      
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!navbarToggle.contains(event.target) && !navbarMenu.contains(event.target)) {
+          navbarToggle.classList.remove('active');
+          navbarMenu.classList.remove('active');
+        }
+      });
+    }
   </script>
 </body>
 </html>

@@ -24,7 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const navbarMenu = document.getElementById('navbar-menu');
   
   if (navbarToggle && navbarMenu) {
-    navbarToggle.addEventListener('click', function() {
+    navbarToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
       navbarToggle.classList.toggle('active');
       navbarMenu.classList.toggle('active');
     });

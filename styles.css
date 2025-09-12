@@ -2970,11 +2970,20 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-toggle {
   display: none;
   flex-direction: column;
-  background: none;
-  border: none;
+  background: rgba(255, 107, 53, 0.1);
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  border-radius: var(--radius-md);
   cursor: pointer;
   padding: var(--space-sm);
   gap: 4px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-toggle:hover {
+  background: rgba(255, 107, 53, 0.2);
+  border-color: rgba(255, 107, 53, 0.5);
+  transform: scale(1.05);
 }
 
 .toggle-line {
@@ -2983,6 +2992,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #ffffff;
   border-radius: 1px;
   transition: all 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Mobile Navigation */
@@ -3007,15 +3017,17 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     background: rgba(0, 0, 0, 0.98);
     backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(255, 107, 53, 0.2);
+    border-top: 1px solid rgba(255, 107, 53, 0.3);
+    border-bottom: 1px solid rgba(255, 107, 53, 0.2);
     flex-direction: column;
     padding: var(--space-xl);
     gap: var(--space-md);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 999;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   }
   
   .navbar-menu.active {
@@ -3027,25 +3039,42 @@ h1, h2, h3, h4, h5, h6 {
   .navbar-link {
     width: 100%;
     justify-content: flex-start;
-    padding: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
     font-size: var(--font-size-md);
     border-radius: var(--radius-lg);
+    background: rgba(255, 107, 53, 0.05);
+    border: 1px solid rgba(255, 107, 53, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-link:hover {
+    background: rgba(255, 107, 53, 0.15);
+    border-color: rgba(255, 107, 53, 0.3);
+    transform: translateX(5px);
   }
   
   .link-icon {
     font-size: var(--font-size-lg);
   }
   
+  .navbar-toggle.active {
+    background: rgba(255, 107, 53, 0.3);
+    border-color: rgba(255, 107, 53, 0.6);
+  }
+  
   .navbar-toggle.active .toggle-line:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
+    background: var(--accent-primary);
   }
   
   .navbar-toggle.active .toggle-line:nth-child(2) {
     opacity: 0;
+    transform: scaleX(0);
   }
   
   .navbar-toggle.active .toggle-line:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
+    background: var(--accent-primary);
   }
 }
 
