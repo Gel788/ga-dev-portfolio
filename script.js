@@ -631,7 +631,7 @@ function initContactForm() {
       console.log('Отправляем данные:', data);
       
       // Отправляем данные на сервер
-      const response = await fetch('submit-form.php', {
+      const response = await fetch('/submit-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

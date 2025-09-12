@@ -57,7 +57,7 @@ app.post('/submit-form', async (req, res) => {
         const formData = req.body;
         
         // Валидация обязательных полей
-        const requiredFields = ['name', 'telegram', 'projectType', 'message'];
+        const requiredFields = ['name', 'telegram', 'phone', 'company', 'projectType', 'budget', 'timeline', 'message'];
         for (const field of requiredFields) {
             if (!formData[field] || formData[field].trim() === '') {
                 return res.status(400).json({
